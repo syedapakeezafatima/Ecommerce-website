@@ -128,11 +128,11 @@ header {
 }
 
 .categories-section {
-    margin-left: 60px;   /* Adjusts the left margin */
-    margin-right: 60px;  /* Adjusts the right margin */
-    padding: 20px;
+    margin-left: 130px;   /* Adjusts the left margin */
+    margin-right: 130px;  /* Adjusts the right margin */
+    padding: 40px;
     text-align: center;
-    background-color: #f4f4f4;
+    background-color: #f9f9f9;;
 }
 
 .categories-section h2 {
@@ -181,7 +181,7 @@ header {
 .just-for-you {
     margin-left: 70px;   /* Adjusts the left margin */
     margin-right: 70px;  /* Adjusts the right margin */
-    padding: 90px;
+    padding: 140px;
 }
 
 .just-for-you h2 {
@@ -217,30 +217,49 @@ header {
     height: auto; /* Fixed height for images */
     object-fit: cover; /* Ensures the aspect ratio is maintained */
 }
+.just-for-you-item {
+    background-color: white;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(4, 4, 4, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    width: 190px; /* Adjust width as necessary */
+}
 
 .just-for-you-item p {
     margin: 5px 0; /* Reduced margin for smaller size */
-    font-weight: bold;
-    text-align: left;
-    font-size: 14px; /* Adjust font size for paragraph */
+    font-weight: lighter; /* Bold text for product name */
+    text-align: left; /* Align text to the left */
+    font-size: 14px; /* Font size for product name */
 }
 
 .just-for-you-item span {
-    text-align: left;
+    color: rgb(234, 9, 9); /* Color for discount */
+    text-align: left; /* Align text to the left */
     display: block; /* Stack the elements */
-    font-size: 12px; /* Smaller font size for discount and rating */
+    font-size: 10px; /* Font size for discount and rating */
 }
 
 .discount {
-    color: red; /* Color for discount */
-    text-align: left;
+    font-weight: lighter; /* Bold text for discount */
+    font-size: 10px;
+}
+
+.price {
+    color: red; /* Color for discount *
+    font-weight: bold; /* Bold text for price */
+    font-size: 16px; /* Larger font size for price */
 }
 
 .rating {
-    text-align: left;
-    color: orange; /* Color for rating */
+    color: rgb(9, 8, 8); /* Color for rating stars */
     font-size: 12px; /* Smaller font size for rating */
 }
+
+/* Optional: Add styles for star ratings */
+.star {
+    color: gold; /* Color for stars */
+}
+
 
 
 
