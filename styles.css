@@ -130,26 +130,33 @@ header {
 }
 
 .categories-section h2 {
+    text-align: left;
+    margin-left: 35px;
     font-size: 24px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    font-weight: lighter;
     color: #333;
 }
-
 .categories-grid {
     display: grid;
     grid-template-columns: repeat(8, 1fr); /* 8 items per row */
-    gap: 20px; /* Space between the items */
     padding-left: 40px; /* Left padding */
     padding-right: 40px; /* Right padding */
 }
-
 .category-item {
     background-color: white;
-    border-radius: 8px;
     padding: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 9px 9px rgba(2, 2, 2, 0.1);
     text-align: center;
+    border: 0.1px solid rgb(238, 238, 238); /* Add this line for a thin black border */
+    transition: transform 0.2s ease, box-shadow 0.7s ease; /* Smooth transition for the hover effect */
 }
+
+.category-item:hover {
+    transform: scale(1.05); /* Slightly enlarge the item */
+    box-shadow: 0 10px 10px rgba(2, 2, 2, 0.2); /* Increase the shadow on hover */
+}
+
 
 .category-item img {
     width: 100px; /* Adjust this size as needed */
