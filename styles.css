@@ -9,7 +9,8 @@ header {
     flex-direction: column;
     align-items: center;
     background-color: #f94600;
-    padding: 0px 12px; /* Reduce padding to lower height */
+    padding: 0px 9px; /* Reduce padding to lower height */
+    height: 120px;
 }
 
 .header-content {
@@ -38,7 +39,7 @@ header {
 .navbar {
     display: flex;
     gap: 25px; /* Adjust gap between links */
-    margin-right: 240px; /* Adjust margin to fit design */
+    margin-right: 280px; /* Adjust margin to fit design */
 }
 
 .navbar a {
@@ -53,6 +54,9 @@ header {
     width: 100%;
     justify-content: center; /* Center the search bar */
     margin-top: 0px;
+    margin-right: 280px; /* Adjust margin to fit design */
+    
+
 }
 
 .search-button {
@@ -124,6 +128,8 @@ header {
 }
 
 .categories-section {
+    margin-left: 60px;   /* Adjusts the left margin */
+    margin-right: 60px;  /* Adjusts the right margin */
     padding: 20px;
     text-align: center;
     background-color: #f4f4f4;
@@ -153,9 +159,10 @@ header {
 }
 
 .category-item:hover {
-    transform: scale(1.05); /* Slightly enlarge the item */
-    box-shadow: 0 10px 10px rgba(2, 2, 2, 0.2); /* Increase the shadow on hover */
+    transform: scale(1.02); /* Reduce the enlargement to 2% */
+    box-shadow: 0 5px 5px rgba(2, 2, 2, 0.1); /* Decrease the shadow effect */
 }
+
 
 
 .category-item img {
@@ -171,8 +178,69 @@ header {
     margin: 0;
 }
 
+.just-for-you {
+    margin-left: 70px;   /* Adjusts the left margin */
+    margin-right: 70px;  /* Adjusts the right margin */
+    padding: 90px;
+}
 
+.just-for-you h2 {
+    text-align: left;
+    margin-left: 40px;
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: lighter;
+    color: #333;
+}
+.just-for-you-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 6 items per row */
+    gap: 5px; /* Reduced space between items */
+}
 
+.just-for-you-item {
+    background-color: white;
+    padding: 10px; /* Keep some padding for better aesthetics */
+    box-shadow: 0 2px 4px rgba(4, 4, 4, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition */
+    height: auto; /* Set a fixed height for uniformity */
+    width: 190px; /* Adjust width if necessary */
+  
+}
+  /* Hover effect */
+  .just-for-you-item:hover {
+    box-shadow: 0 10px 8px rgba(0, 0, 0, 0.2); /* Increase shadow for emphasis */
+}
+
+.just-for-you-item img {
+    width: 100%; /* Full width to fit the card */
+    height: auto; /* Fixed height for images */
+    object-fit: cover; /* Ensures the aspect ratio is maintained */
+}
+
+.just-for-you-item p {
+    margin: 5px 0; /* Reduced margin for smaller size */
+    font-weight: bold;
+    text-align: left;
+    font-size: 14px; /* Adjust font size for paragraph */
+}
+
+.just-for-you-item span {
+    text-align: left;
+    display: block; /* Stack the elements */
+    font-size: 12px; /* Smaller font size for discount and rating */
+}
+
+.discount {
+    color: red; /* Color for discount */
+    text-align: left;
+}
+
+.rating {
+    text-align: left;
+    color: orange; /* Color for rating */
+    font-size: 12px; /* Smaller font size for rating */
+}
 
 
 
