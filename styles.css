@@ -1,0 +1,175 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f9f9f9;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f94600;
+    padding: 0px 12px; /* Reduce padding to lower height */
+}
+
+.header-content {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    margin-right: 140px; /* Space between logo and search bar */
+}
+
+.logo-img {
+    height: 34px; /* Adjust height to fit as needed */
+    margin-right: 10px; /* Space between image and text */
+}
+
+.logo-text {
+    color: white;
+    font-size: 25px; /* Adjust size if necessary */
+    font-weight: bold;
+    display: flex;
+}
+
+.navbar {
+    display: flex;
+    gap: 25px; /* Adjust gap between links */
+    margin-right: 240px; /* Adjust margin to fit design */
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center; /* Center the search bar */
+    margin-top: 0px;
+}
+
+.search-button {
+    background-color: #ffe5d5; /* Light orange background */
+    border: none;
+    padding: 18px; /* Adjust padding for the icon */
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-button i {
+    background-color: #f5ebe5;
+    color: #f4916a; /* Orange color for the icon */
+    font-size: 20px; /* Adjust size of the search icon */
+}
+
+.search-bar {
+    width: 600px; /* Keep the search bar the same size */
+    padding: 18px;
+    border: none;
+    border-bottom-left-radius: 4px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    margin-left: 0;
+    justify-content: center; /* Center the search bar */
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+
+.cart-icon {
+    background-color: #f94600; /* Orange background matching the header */
+    padding: 16px; /* Padding around the cart icon */
+   
+    color: white; /* White color for the cart icon */
+    text-decoration: none;
+    font-size: 30px; /* Adjust size of the cart icon */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px; /* Space between the search button and cart icon */
+}
+
+.cart-icon i {
+    color: white; /* Ensure the cart icon is white */
+}
+.main-carousel {
+    width: 100%; /* Carousel takes full width */
+    margin: 0 auto; /* Center it on the page */
+    position: relative; /* Needed for positioning the arrows within the image */
+}
+
+.carousel-cell {
+    width: 100%; /* Each cell takes up 100% of the carousel container */
+    height: 300px; /* Set the height of the carousel */
+    overflow: hidden; /* Ensure the image does not overflow outside the container */
+}
+
+.carousel-cell img {
+    width: 50%; /* Set the width of the image to 50% of the container */
+    height: 100%; /* Ensure the image covers the full height of the container */
+    object-fit: cover; /* Maintain the aspect ratio and crop if necessary */
+    display: block;
+    margin: 0 auto;
+}
+
+.categories-section {
+    padding: 20px;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+.categories-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr); /* 8 items per row */
+    gap: 20px; /* Space between the items */
+    padding-left: 40px; /* Left padding */
+    padding-right: 40px; /* Right padding */
+}
+
+.category-item {
+    background-color: white;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.category-item img {
+    width: 100px; /* Adjust this size as needed */
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.category-item p {
+    font-size: 16px;
+    color: #333;
+    margin: 0;
+}
+
+
+
+
+
+
+
+
+
+
