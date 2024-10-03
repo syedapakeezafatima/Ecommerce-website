@@ -43,70 +43,78 @@ header {
 }
 
 .navbar a {
+    margin-top: 8px;
     color: white;
     text-decoration: none;
     font-size: 15px;
 }
-
+/* Container for search bar and cart */
 .search-container {
+    margin-top: 10px;
     display: flex;
     align-items: center;
-    width: 100%;
-    justify-content: center; /* Center the search bar */
-    margin-top: 0px;
-    margin-right: 280px; /* Adjust margin to fit design */
-    
-
+    justify-content: center; /* Ensures space between search and cart */
+    background-color: #f94600; /* Matching the orange background */
+    padding: 10px; /* Adjust padding for the header */
 }
 
-.search-button {
-    background-color: #ffe5d5; /* Light orange background */
+/* Logo styling */
+.logo {
+    margin-right: 100px; /* Reduced margin between logo and search bar */
+}
+
+/* Search bar styling */
+.search-bar {
+    width: 600px;
+    padding: 12px; /* Reduced padding for a tighter look */
     border: none;
-    padding: 18px; /* Adjust padding for the icon */
+    border-radius: 2px; /* Slightly rounded edges */
+    font-size: 16px;
+    outline: none;
+    margin-right: 0px; /* Reduced gap between search bar and button */
+}
+
+/* Search button (magnifying glass icon) */
+.search-button {
+    background-color: #ffe5d5; /* Light orange background for button */
+    border: none;
+    padding: 12px; /* Reduced padding for the button */
     cursor: pointer;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    margin-right: 0px; /* Reduced margin between button and cart icon */
 }
 
 .search-button i {
-    background-color: #f5ebe5;
-    color: #f4916a; /* Orange color for the icon */
-    font-size: 20px; /* Adjust size of the search icon */
+    color: #f4916a; /* Orange color for search icon */
+    font-size: 18px;
 }
 
-.search-bar {
-    width: 600px; /* Keep the search bar the same size */
-    padding: 18px;
-    border: none;
-    border-bottom-left-radius: 4px;
-}
-
-.search-container {
-    display: flex;
-    align-items: center;
-    margin-left: 0;
-    justify-content: center; /* Center the search bar */
-    margin-top: 15px;
-    margin-bottom: 30px;
-}
-
+/* Cart icon styling */
 .cart-icon {
-    background-color: #f94600; /* Orange background matching the header */
-    padding: 16px; /* Padding around the cart icon */
-   
-    color: white; /* White color for the cart icon */
-    text-decoration: none;
-    font-size: 30px; /* Adjust size of the cart icon */
+    margin-left: 15px;
     display: flex;
-    justify-content: center;
     align-items: center;
-    margin-left: 10px; /* Space between the search button and cart icon */
+    justify-content: center;
+    background-color: transparent; /* No background for the cart icon area */
 }
 
-.cart-icon i {
-    color: white; /* Ensure the cart icon is white */
+/* Cart icon SVG styling */
+.cart-icon svg {
+    fill: white; /* White cart icon */
+    width: 30px;
+    height: 30px;
 }
+
+/* Optional - Adjust for full header styling */
+.header {
+    background-color: #f94600; /* Matches the orange background */
+    padding: 20px; /* Adjust padding for header */
+}
+
+/* carousel section  */
+
 .main-carousel {
     width: 100%; /* Carousel takes full width */
     margin: 0 auto; /* Center it on the page */
@@ -127,12 +135,17 @@ header {
     margin: 0 auto;
 }
 
+  /* categories section  */
+
+
+
 .categories-section {
     margin-left: 130px;   /* Adjusts the left margin */
     margin-right: 130px;  /* Adjusts the right margin */
-    padding: 40px;
+    padding: 20px;        /* Adjusted padding to reduce space */
     text-align: center;
-    background-color: #f9f9f9;;
+    background-color: #f9f9f9;
+    margin-bottom: 0; /* Ensure there's no margin below this section */
 }
 
 .categories-section h2 {
@@ -177,82 +190,76 @@ header {
     color: #333;
     margin: 0;
 }
+   
+/* Just for You section */
 
 .just-for-you {
-    margin-left: 70px;   /* Adjusts the left margin */
-    margin-right: 70px;  /* Adjusts the right margin */
-    padding: 140px;
+    margin: 10px 100px; /* Aligning margins with More Products */
+    padding: 20px 0; /* Reduced padding for consistency */
 }
 
 .just-for-you h2 {
     text-align: left;
-    margin-left: 40px;
-    font-size: 24px;
-    margin-bottom: 10px;
-    font-weight: lighter;
-    color: #333;
+    margin-left: 5px;
+    font-size: 24px; /* Keep the font size the same */
+    margin-bottom: 10px; /* Space below the heading */
+    font-weight: lighter; /* Keep the font weight the same */
+    color: #333; /* Text color */
 }
+
 .just-for-you-grid {
     display: grid;
     grid-template-columns: repeat(6, 1fr); /* 6 items per row */
-    gap: 5px; /* Reduced space between items */
+    gap: 20px; /* Matching the gap from More Products */
+    margin: 0; /* Remove additional margins for grid */
 }
 
 .just-for-you-item {
-    background-color: white;
-    padding: 10px; /* Keep some padding for better aesthetics */
-    box-shadow: 0 2px 4px rgba(4, 4, 4, 0.1);
+    background-color: white; /* Keep the background color the same */
+    padding: 10px; /* Padding for aesthetics */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
     transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition */
-    height: auto; /* Set a fixed height for uniformity */
-    width: 190px; /* Adjust width if necessary */
-  
+    border-radius: 5px; /* Rounded corners for consistency */
+    height: auto; /* Let height adjust based on content */
 }
-  /* Hover effect */
-  .just-for-you-item:hover {
+
+/* Hover effect */
+.just-for-you-item:hover {
     box-shadow: 0 10px 8px rgba(0, 0, 0, 0.2); /* Increase shadow for emphasis */
 }
 
 .just-for-you-item img {
     width: 100%; /* Full width to fit the card */
-    height: auto; /* Fixed height for images */
+    height: auto; /* Maintain image aspect ratio */
     object-fit: cover; /* Ensures the aspect ratio is maintained */
-}
-.just-for-you-item {
-    background-color: white;
-    padding: 10px;
-    box-shadow: 0 2px 4px rgba(4, 4, 4, 0.1);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    width: 190px; /* Adjust width as necessary */
 }
 
 .just-for-you-item p {
     margin: 5px 0; /* Reduced margin for smaller size */
-    font-weight: lighter; /* Bold text for product name */
+    font-weight: lighter; /* Keep font weight light */
     text-align: left; /* Align text to the left */
     font-size: 14px; /* Font size for product name */
 }
 
-.just-for-you-item span {
-    color: rgb(234, 9, 9); /* Color for discount */
-    text-align: left; /* Align text to the left */
-    display: block; /* Stack the elements */
-    font-size: 10px; /* Font size for discount and rating */
-}
-
-.discount {
-    font-weight: lighter; /* Bold text for discount */
-    font-size: 10px;
-}
-
-.price {
-    color: red; /* Color for discount *
+.just-for-you-item .price {
+    color: red; /* Color for price */
     font-weight: bold; /* Bold text for price */
-    font-size: 16px; /* Larger font size for price */
+    font-size: 16px; /* Font size for price */
+    margin: 5px 0; /* Space below the price */
 }
 
-.rating {
+.just-for-you-item .discount {
+    color: black; /* Color for discount text */
+    font-size: 10px; /* Font size for discount */
+    font-weight: lighter; /* Keep font weight light */
+    display: block; /* Stack the elements */
+    text-align: left; /* Align text to the left */
+    margin-bottom: 5px; /* Space below discount */
+}
+
+.just-for-you-item .rating {
     color: rgb(9, 8, 8); /* Color for rating stars */
-    font-size: 12px; /* Smaller font size for rating */
+    font-size: 12px; /* Font size for rating */
 }
 
 /* Optional: Add styles for star ratings */
@@ -261,9 +268,245 @@ header {
 }
 
 
+ /* more products section  */
+
+.load-more-container {
+    display: flex;
+    justify-content: center; /* Center the button */
+    margin: 10px 100px; /* Aligning margins with More Products */
+
+}
+
+.load-more-button {
+    padding: 20px 100px; /* Adjust padding */
+    font-size: 16px; /* Font size for button text */
+    color: #91bae5; /* Text color */
+    background-color: transparent; /* No background color */
+    border: 2px solid #97b9de; /* Border color */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, color 0.3s; /* Transition for hover effect */
+}
+
+.load-more-button:hover {
+    background-color: #94c7fd; /* Change background on hover */
+    color: white; /* Change text color on hover */
+}
 
 
+.container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 6 items per row */
+    gap: 20px; /* Space between items */
+    margin: 0 70px; /* Margin on the left and right */
+}
+
+.product {
+    display: none; /* Initially hide all products */
+    background-color: white;
+    padding: 10px; /* Padding for aesthetics */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition */
+    border-radius: 5px; /* Rounded corners */
+    height: auto; /* Allow height to adjust based on content */
+}
+
+/* Hover effect */
+.product:hover {
+    box-shadow: 0 10px 8px rgba(0, 0, 0, 0.2); /* Increase shadow for emphasis */
+}
+
+.product img {
+    width: 100%; /* Full width to fit the card */
+    height: auto; /* Fixed height for images */
+    border-radius: 5px; /* Rounded corners for images */
+    object-fit: cover; /* Ensures the aspect ratio is maintained */
+}
+
+.product h3 {
+    font-size: 16px; /* Font size for product name */
+    margin: 10px 0; /* Margin for spacing */
+    font-weight: normal; /* Normal weight for headings */
+    text-align: left; /* Align text to the left */
+}
+
+.price {
+    color: red; /* Color for price */
+    font-weight: bold; /* Bold text for price */
+    font-size: 16px; /* Larger font size for price */
+    margin: 5px 0; /* Margin for spacing */
+}
+
+.discount {
+    color: rgb(234, 9, 9); /* Color for discount */
+    font-size: 12px; /* Font size for discount */
+}
+
+.rating {
+    color: rgb(4, 4, 4); /* Color for rating stars */
+    font-size: 12px; /* Font size for rating */
+}
+
+/* footer  */
+.footer {
+    background-color: #f5f5f5;
+    padding: 40px;
+    color: #4c3f6b;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    color: #4c3f6b;
+    margin-bottom: 15px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: #4c3f6b;
+    font-size: 14px;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+/* 
+/* 
+/* App download section */
+.app-download {
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Align items vertically centered */
+    background-color: #f5f5f5; /* Same background as footer */
+    
+}
+
+.app-logo-text {
+    display: flex; /* Flex for logo and text */
+    
+}
+
+.logo-image {
+    width: 50px; /* Adjust logo size */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 15px; /* Space between logo and text */
+}
+
+.app-text {
+    display: flex;
+    flex-direction: column; /* Stack the text vertically */
+}
+
+.app-text h3 {
+    color: #ff6600; /* Title color */
+    font-size: 18px; /* Title font size */
+    margin: 0; /* Remove default margin */
+    font-weight: normal; /* Set font weight */
+}
+
+.app-text p {
+    margin: 5px 0 0; /* Margin for paragraph */
+}
+
+.app-text a {
+    color: #4c3f6b; /* Link color */
+    font-size: 14px; /* Font size for download text */
+    text-decoration: none; /* Remove underline */
+}
+
+.app-text a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* App buttons */
+.app-buttons {
+    display: block; /* Flexbox for buttons */
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 10px; /* Space between buttons */
+}
+
+.app-button {
+    display: flex; /* Flex for individual buttons */
+    align-items: center; /* Center align the image within the button */
+}
+
+.app-buttons img {
+    width: 120px; /* Set width for app store images */
+    height: auto; /* Maintain aspect ratio */
+} 
+
+ */
 
 
+.sidebar {
+    width: 20px;
+    background-color: #f4f4f4;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    left: 20px; /* Position from the left */
+}
+
+.sidebar h2 {
+    margin: 0 0 15px 0;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 10px 0;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #6d6d6d;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    
+}
 
 
+.sidebar ul li a:hover {
+    background-color: #fbfbfb;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #f4f4f4; /* Adjust as needed */
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
