@@ -17,12 +17,3 @@ document.addEventListener('DOMContentLoaded', () => {
             loadMoreButton.style.display = 'none';
         }
     }
-
-    loadMoreButton.addEventListener('click', () => {
-        currentProducts += 6; // Increase the number of products to display by 6
-        displayProducts();
-    });
-
-    // Initial call to display the first set of products
-    displayProducts(); // This will show 0 products initially
-});

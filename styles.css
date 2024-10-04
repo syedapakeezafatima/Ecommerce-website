@@ -1,17 +1,20 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: NotoSans-Regular;
     margin: 0;
     background-color: #f9f9f9;
 }
-
 header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #f94600;
+    background-color: #f57224;
     padding: 0px 9px; /* Reduce padding to lower height */
-    height: 120px;
+    height: 110px;
+    position: sticky; /* Make the header sticky */
+    top: 0; /* Position the header at the top of the viewport */
+    z-index: 1000; /* Optional: Ensure the header is above other content */
 }
+
 
 .header-content {
     display: flex;
@@ -25,79 +28,90 @@ header {
 }
 
 .logo-img {
-    height: 34px; /* Adjust height to fit as needed */
-    margin-right: 10px; /* Space between image and text */
+    height: 32px; /* Adjust height to fit as needed */
+    margin-right: 2px; /* Space between image and text */
 }
 
 .logo-text {
     color: white;
-    font-size: 25px; /* Adjust size if necessary */
-    font-weight: bold;
+    font-size: 27px; /* Adjust size if necessary */
+    font-weight: bolder;
     display: flex;
+    letter-spacing: -3px;
 }
 
 .navbar {
     display: flex;
-    gap: 25px; /* Adjust gap between links */
-    margin-right: 280px; /* Adjust margin to fit design */
+    gap: 0px; /* Adjust gap between links */
+    margin-right: 270px; /* Adjust margin to fit design */
 }
 
 .navbar a {
     margin-top: 8px;
     color: white;
     text-decoration: none;
-    font-size: 15px;
+    font-size: 12px;
+   margin-right: 60px;
 }
 /* Container for search bar and cart */
 .search-container {
-    margin-top: 10px;
+    margin-top: 5px;
     display: flex;
     align-items: center;
-    justify-content: center; /* Ensures space between search and cart */
-    background-color: #f94600; /* Matching the orange background */
+    justify-content: center; /* Center the items horizontally */
+    background-color: #f57224; /* Matching the orange background */
     padding: 10px; /* Adjust padding for the header */
+    margin-right: 170px;
 }
 
 /* Logo styling */
 .logo {
-    margin-right: 100px; /* Reduced margin between logo and search bar */
+    margin-right: 60px; /* Reduced margin for a tighter gap */
 }
 
 /* Search bar styling */
 .search-bar {
+    border-radius: 2px 0px 0px 2px;
     width: 600px;
     padding: 12px; /* Reduced padding for a tighter look */
     border: none;
-    border-radius: 2px; /* Slightly rounded edges */
     font-size: 16px;
     outline: none;
-    margin-right: 0px; /* Reduced gap between search bar and button */
+    margin-right: 0; /* Reduced gap between search bar and button */
 }
 
-/* Search button (magnifying glass icon) */
+.search-bar::placeholder {
+    color: #b4b1b1; /* Set the placeholder color */
+    font-size: 14px;
+    opacity: 1; /* Fully opaque */
+}
+
+/* Styles for the button */
 .search-button {
-    background-color: #ffe5d5; /* Light orange background for button */
-    border: none;
-    padding: 12px; /* Reduced padding for the button */
-    cursor: pointer;
-    display: flex;
+    background-color: #ffe7d8; /* Light peach background color */
+    border: none; /* Remove any border */
+    padding: 10px;
+    width: 50px; /* Width of the button */
+    height: 44px; /* Height of the button */
+    display: flex; /* Align icon inside the button */
     align-items: center;
     justify-content: center;
-    margin-right: 0px; /* Reduced margin between button and cart icon */
+    outline: none; /* Remove any focus outline */
 }
 
-.search-button i {
-    color: #f4916a; /* Orange color for search icon */
-    font-size: 18px;
+/* Styles for the search icon */
+.search-icon {
+    width: 20px; /* Adjust the size of the icon */
+    height: 20px;
+    filter: invert(28%) sepia(98%) saturate(7490%) hue-rotate(1deg) brightness(104%) contrast(102%); /* Make the icon orange */
 }
 
 /* Cart icon styling */
 .cart-icon {
-    margin-left: 15px;
+    margin-left: 20px; /* Adjust the margin for a balanced gap */
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: transparent; /* No background for the cart icon area */
 }
 
 /* Cart icon SVG styling */
@@ -107,33 +121,41 @@ header {
     height: 30px;
 }
 
-/* Optional - Adjust for full header styling */
-.header {
-    background-color: #f94600; /* Matches the orange background */
-    padding: 20px; /* Adjust padding for header */
+/* Carousel container */
+
+.carousel-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-left: 320px;
 }
 
-/* carousel section  */
-
+/* Main Carousel */
 .main-carousel {
-    width: 100%; /* Carousel takes full width */
-    margin: 0 auto; /* Center it on the page */
-    position: relative; /* Needed for positioning the arrows within the image */
-}
-
-.carousel-cell {
-    width: 100%; /* Each cell takes up 100% of the carousel container */
-    height: 300px; /* Set the height of the carousel */
-    overflow: hidden; /* Ensure the image does not overflow outside the container */
+    width: 70%; /* Adjust the width of the carousel */
 }
 
 .carousel-cell img {
-    width: 50%; /* Set the width of the image to 50% of the container */
-    height: 100%; /* Ensure the image covers the full height of the container */
-    object-fit: cover; /* Maintain the aspect ratio and crop if necessary */
-    display: block;
-    margin: 0 auto;
+    width: 100%;
+    height: auto;
 }
+
+/* Side Section */
+.side-section {
+    width: 15%; /* Adjust side section width */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20%;
+    
+}
+
+.app-promotion img {
+   
+    width: 90%;
+   
+}
+
 
   /* categories section  */
 
@@ -459,18 +481,16 @@ header {
  */
 
 
-.sidebar {
+ .sidebar {
     width: 20px;
     background-color: #f4f4f4;
     padding: 20px;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    position: absolute;
-    left: 20px; /* Position from the left */
+    position: sticky;
+    top: 0; /* Sticks to the top of the viewport */
+    left: 20px; /* Distance from the left */
 }
 
-.sidebar h2 {
-    margin: 0 0 15px 0;
-}
 
 .sidebar ul {
     list-style: none;
