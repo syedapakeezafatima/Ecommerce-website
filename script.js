@@ -26,12 +26,3 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial call to display the first set of products
     displayProducts(); // This will show 0 products initially
 });
-const flkty = new Flickity('.main-carousel');
-
-function prevSlide() {
-    flkty.previous();
-}
-
-function nextSlide() {
-    flkty.next();
-}
