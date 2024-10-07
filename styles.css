@@ -301,10 +301,15 @@ header {
     color: rgb(183, 181, 181); /* Color for rating stars */
     font-size: 9px; /* Font size for rating */
 }
-
-.star {
-    color: gold; /* Color for stars */
+.rating {
+    color: gold; /* Set text color to gold */
 }
+
+.rating i {
+    color: gold; /* Set the star icon color to gold */
+}
+
+
 
  /* more products section  */
 
