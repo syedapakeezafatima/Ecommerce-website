@@ -8,100 +8,121 @@ header {
     flex-direction: column;
     align-items: center;
     background-color: #F85606; 
-    padding: 0px 9px; /* Reduce padding to lower height */
+    padding: 0px 2px; /* Reduce padding to lower height */
     height: 107px;
     position: sticky; /* Make the header sticky */
-    top: 0; /* Position the header at the top of the viewport */
-    z-index: 1000; /* Optional: Ensure the header is above other content */
 }
 
 
 .header-content {
-    display: flex;
-    justify-content: flex-end;
-    width: 100%;
+    font-size: 12px;
+    line-height: 12px;
+    text-align: right;
+    word-spacing: 0px;
+   display: block;
+
 }
 .logo {
     display: flex;
     align-items: center;
-    margin-right: 140px; /* Space between logo and search bar */
+    margin-right: 130px; /* Space between logo and search bar */
 }
 
 .logo-img {
-    height: 37px; /* Adjust height to fit as needed */
+    height: 35px; /* Adjust height to fit as needed */
     margin-right: 2px; /* Space between image and text */
 }
 
 
 .navbar {
     display: flex;
-      margin-right: 395px; /* Adjust margin to fit design */
+    margin-left: 539px;
+    
 }
 
 .navbar a {
-    margin-top: 5px;
-    color: white;
+    line-height: 22px;
+    text-align: left;
+    white-space: nowrap;
+    word-spacing: 0px;
+    margin-top: 1px;
+    color: rgb(238, 237, 237);
     text-decoration: none;
-    font-size: 9px;
-   margin-right: 27px;
+    font-size: 5px;
+   margin-right: 24px;
    font-weight: lighter;
+}
+
+/* Hover effect */
+.navbar a:hover {
+    color: rgb(246, 231, 205); /* Change text color to orange */
 }
 
 /* Container for search bar and cart */
 .search-container {
-    margin-top: 3px;
     display: flex;
     align-items: center;
     justify-content: center; /* Center the items horizontally */
     background-color: #F85606; /* Matching the orange background */
-    padding: 6px; /* Adjust padding for the header */
-    margin-right: 147px;
+    padding: 5px 15px 10px 15px;
+    margin-right: 219px;
 }
 
 /* Logo styling */
 .logo {
+    margin-top: 6px;
     margin-right: 67px; /* Reduced margin for a tighter gap */
-    height: 58px;
-    width: 139px;
+    height: 8px;
+    vertical-align: middle;
 }
 
 /* Search bar styling */
-.search-bar {
-    
-    border-radius: 2px 0px 0px 2px;
-    width: 600px;
-    padding: 11px; /* Reduced padding for a tighter look */
-    border: none;
-    font-size: 15.5px;
-    outline: none;
-    margin-right: 0; /* Reduced gap between search bar and button */
+
+    .search-bar {
+        border-radius: 2px 0px 0px 2px;
+        width: 560px;
+        padding: 11px; /* Reduced padding for a tighter look */
+        border: none;
+        font-size: 15.5px;
+        outline: none;
+        margin-right: 0; /* Reduced gap between search bar and button */
 }
 
 .search-bar::placeholder {
     color: #b4b1b1; /* Set the placeholder color */
-    font-size: 13px;
+    font-size: 12px;
+    text-align: left;
+    letter-spacing: 0px;
     opacity: 1; /* Fully opaque */
 }
 
 /* Styles for the button */
 .search-button {
-    background-color: #ffe7d8; /* Light peach background color */
+    background-color: #fad8c3; /* Light peach background color */
     border: none; /* Remove any border */
     padding: 10px;
-    width: 50px; /* Width of the button */
-    height: 40.1px; /* Height of the button */
+    width: 40px; /* Width of the button */
+    height: 40.5px; /* Height of the button */
     display: flex; /* Align icon inside the button */
     align-items: center;
     justify-content: center;
-    outline: none; /* Remove any focus outline */
 }
 
 /* Styles for the search icon */
-.search-icon {
-    width: 20px; /* Adjust the size of the icon */
-    height: 20px;
-    filter: invert(28%) sepia(98%) saturate(7490%) hue-rotate(1deg) brightness(104%) contrast(102%); /* Make the icon orange */
+.search-button .search-icon {
+    width: 22px;
+    height: 22px;
+    filter: brightness(0) saturate(100%) invert(57%) sepia(80%) saturate(2000%) hue-rotate(-20deg);
 }
+
+/* On hover */
+.search-button:hover .search-icon {
+    filter: brightness(0) saturate(100%) invert(45%) sepia(100%) saturate(3000%) hue-rotate(0deg);
+}
+
+
+
+
 
 /* Cart icon styling */
 .cart-icon {
@@ -209,12 +230,13 @@ header {
     margin: 0;
 }
    
+
 /* Just for You section */
 
 .just-for-you {
     margin-left: 320px;   /* Adjusts the left margin */
     margin-right: 310px;  /* Adjusts the right margin */
-    padding: 20px 0; /* Reduced padding for consistency */
+    padding: 10px 0; /* Reduced padding for consistency */
 }
 
 .just-for-you h2 {
@@ -229,14 +251,14 @@ header {
 .just-for-you-grid {
     display: grid;
     grid-template-columns: repeat(6, 1fr); /* 6 items per row */
-    gap: 20px; /* Matching the gap from More Products */
+    gap: 10px; /* Matching the gap from More Products */
     margin: 0; /* Remove additional margins for grid */
 }
 
 .just-for-you-item {
     background-color: white; /* Keep the background color the same */
     padding: 10px; /* Padding for aesthetics */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+    
     transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition */
     border-radius: 5px; /* Rounded corners for consistency */
     height: auto; /* Let height adjust based on content */
@@ -308,7 +330,7 @@ header {
 .container {
     display: grid;
     grid-template-columns: repeat(6, 1fr); /* 6 items per row */
-    gap: 20px; /* Space between items */
+    gap: 10px; /* Space between items */
     margin-left: 320px;   /* Adjusts the left margin */
     margin-right: 310px;  /* Adjusts the right margin */
 }
