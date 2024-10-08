@@ -48,7 +48,7 @@ header {
     margin-top: 1px;
     color: rgb(238, 237, 237);
     text-decoration: none;
-    font-size: 12px;
+    font-size: 10px;
    margin-right: 24px;
    font-weight: lighter;
 }
@@ -453,7 +453,7 @@ header {
 }
 
 .footer-section ul li {
-    margin-bottom: 3px; /* Reduced gap between list items */
+    margin-bottom: 0px; /* Reduced gap between list items */
 }
 
 .footer-section ul li a {
@@ -526,4 +526,21 @@ header {
 .app-button img {
     width: 120px;
     height: auto;
+}
+@media (max-width: 768px) {
+    .navbar {
+        margin-left: 0; /* Center navbar items on smaller screens */
+        flex-direction: column; /* Stack navbar items vertically */
+    }
+
+    .carousel-container,
+    .categories-section,
+    .just-for-you {
+        margin-left: 20px;
+        margin-right: 20px; /* Adjust margins for mobile */
+    }
+
+    .search-bar {
+        width: 100%; /* Make the search bar full width */
+    }
 }
