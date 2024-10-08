@@ -48,7 +48,7 @@ header {
     margin-top: 1px;
     color: rgb(238, 237, 237);
     text-decoration: none;
-    font-size: 5px;
+    font-size: 12px;
    margin-right: 24px;
    font-weight: lighter;
 }
@@ -65,7 +65,7 @@ header {
     justify-content: center; /* Center the items horizontally */
     background-color: #F85606; /* Matching the orange background */
     padding: 5px 15px 10px 15px;
-    margin-right: 219px;
+    margin-right: 218px;
 }
 
 /* Logo styling */
@@ -122,7 +122,7 @@ header {
 
 
 
-
+   
 
 /* Cart icon styling */
 .cart-icon {
@@ -160,6 +160,7 @@ header {
 }
 
 /* Side Section */
+
 .side-section {
     width: 15.6%; /* Adjust side section width */
     display: flex;
@@ -266,7 +267,7 @@ header {
 
 /* Hover effect */
 .just-for-you-item:hover {
-    box-shadow: 0 10px 8px rgba(0, 0, 0, 0.2); /* Increase shadow for emphasis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect from all sides */
 }
 
 .just-for-you-item img {
@@ -352,7 +353,7 @@ header {
 
 /* Hover effect */
 .product:hover {
-    box-shadow: 0 10px 8px rgba(0, 0, 0, 0.2); /* Increase shadow for emphasis */
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1); /* Increase shadow for emphasis */
 }
 
 .product img {
@@ -386,121 +387,8 @@ header {
     font-size: 9px; /* Font size for rating */
 }
 
-/* footer  */
-.footer {
-   
-    padding: 30px;
-    color: #564a74;
-}
 
-.footer-container {
-    margin-left: 320px;   /* Adjusts the left margin */
-    margin-right: 310px;  /* Adjusts the right margin */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 100%;
-   
-}
-
-.footer-section {
-    flex: 1;
-    margin-right: 20px;
-}
-
-.footer-section h3 {
-    font-size: 15px;
-    color: #564a74;
-    margin-bottom: 15px;
-}
-
-.footer-section ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-section ul li {
-    margin-bottom: 10px;
-}
-
-.footer-section ul li a {
-    text-decoration: none;
-    color: #564a74;
-    font-size: 10px;
-}
-
-.footer-section ul li a:hover {
-    text-decoration: underline;
-}
-
-
-/* 
-/* App download section */
-.app-download {
-    display: flex; /* Use flexbox for layout */
-    align-items: center; /* Align items vertically centered */
-    background-color: #f5f5f5; /* Same background as footer */
-    
-}
-
-.app-logo-text {
-    display: flex; /* Flex for logo and text */
-    
-}
-
-.logo-image {
-    width: 50px; /* Adjust logo size */
-    height: auto; /* Maintain aspect ratio */
-    margin-right: 15px; /* Space between logo and text */
-}
-
-.app-text {
-    display: flex;
-    flex-direction: column; /* Stack the text vertically */
-}
-
-.app-text h3 {
-    color: #ff6600; /* Title color */
-    font-size: 18px; /* Title font size */
-    margin: 0; /* Remove default margin */
-    font-weight: normal; /* Set font weight */
-}
-
-.app-text p {
-    margin: 5px 0 0; /* Margin for paragraph */
-}
-
-.app-text a {
-    color: #4c3f6b; /* Link color */
-    font-size: 14px; /* Font size for download text */
-    text-decoration: none; /* Remove underline */
-}
-
-.app-text a:hover {
-    text-decoration: underline; /* Underline on hover */
-}
-
-/* App buttons */
-.app-buttons {
-    display: block; /* Flexbox for buttons */
-    flex-direction: column; /* Stack buttons vertically */
-    gap: 10px; /* Space between buttons */
-}
-
-.app-button {
-    display: flex; /* Flex for individual buttons */
-    align-items: center; /* Center align the image within the button */
-}
-
-.app-buttons img {
-    width: 120px; /* Set width for app store images */
-    height: auto; /* Maintain aspect ratio */
-} 
-
-
-
-
- .sidebar {
+.sidebar {
     width: 20px;
     background-color: #f4f4f4;
     padding: 20px;
@@ -533,19 +421,109 @@ header {
 .sidebar ul li a:hover {
     background-color: #fbfbfb;
 }
+.footer {
+    padding: 30px;
+    color: #564a74;
+    background-color: #f4f4f4; /* Adjust as needed */
+}
 
 .footer-container {
+    margin-left: 320px;   /* Adjusts the left margin */
+    margin-right: 310px;  /* Adjusts the right margin */
     display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    background-color: #f4f4f4; /* Adjust as needed */
+    justify-content: center; /* Center all footer sections */
+    align-items: flex-start;
+    max-width: 100%; /* Prevent overflow */
+}
+
+.footer-section {
+    flex: 1;
+    margin: 0 15px; /* Adjust margin to reduce the gap */
+}
+
+.footer-section h3 {
+    font-size: 15px;
+    color: #564a74;
+    margin-bottom: 5px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 3px; /* Reduced gap between list items */
 }
 
 .footer-section ul li a {
     text-decoration: none;
-    color: #333;
+    color: #564a74;
+    font-size: 8px;
+    line-height: normal; /* Set to 'normal' or a specific value if needed */
+    word-spacing: 0px;
 }
 
 .footer-section ul li a:hover {
     text-decoration: underline;
+}
+
+
+/* App download section */
+.app-download {
+    display: flex;
+    align-items: center;
+    margin-top: 20px; /* Optional: add some space above the app download section */
+}
+
+.app-logo-text {
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    width: 50px;
+    height: auto;
+    margin-right: 15px;
+}
+
+.app-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center text in the app text */
+}
+
+.app-text h3 {
+    color: #ff6600;
+    font-size: 18px;
+    margin: 0;
+    font-weight: normal;
+    text-align: center; /* Center the text */
+}
+
+.app-text p {
+    margin: 5px 0 0;
+}
+
+.app-text a {
+    color: #4c3f6b;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.app-text a:hover {
+    text-decoration: underline;
+}
+
+/* App buttons */
+.app-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center; /* Center the buttons */
+}
+
+.app-button img {
+    width: 120px;
+    height: auto;
 }
