@@ -1,546 +1,540 @@
 body {
-    font-family: Roboto-Regular, Helvetica Neue, Helvetica, Tahoma, Arial, Sans-serif;
-    margin: 0;
-    background-color: #f9f9f9;
+  font-family: Roboto-Regular, Helvetica Neue, Helvetica, Tahoma, Arial,
+    Sans-serif;
+  margin: 0;
+  background-color: #f9f9f9;
 }
 header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #F85606; 
-    padding: 0px 2px; /* Reduce padding to lower height */
-    height: 107px;
-    position: sticky; /* Make the header sticky */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #F85606; 
+  padding: 0px 2px; /* Reduce padding to lower height */
+  height: 117px;
+  position: sticky; /* Make the header sticky */
 }
 
 
 .header-content {
-    font-size: 12px;
-    line-height: 12px;
-    text-align: right;
-    word-spacing: 0px;
-   display: block;
+  font-size: 12px;
+  line-height: 12px;
+  text-align: right;
+  word-spacing: 0px;
+ display: block;
 
 }
-.logo {
-    display: flex;
-    align-items: center;
-    margin-right: 130px; /* Space between logo and search bar */
-}
 
-.logo-img {
-    height: 35px; /* Adjust height to fit as needed */
-    margin-right: 2px; /* Space between image and text */
-}
 
 
 .navbar {
-    display: flex;
-    margin-left: 539px;
-    
+  display: flex;
+  margin-left: 549px;
+  
 }
 
 .navbar a {
-    line-height: 22px;
-    text-align: left;
-    white-space: nowrap;
-    word-spacing: 0px;
-    margin-top: 1px;
-    color: rgb(238, 237, 237);
-    text-decoration: none;
-    font-size: 10px;
-   margin-right: 24px;
-   font-weight: lighter;
+  line-height: 22px;
+  text-align: left;
+  white-space: nowrap;
+  word-spacing: 0px;
+  margin-top: 1px;
+  color: rgb(238, 237, 237);
+  text-decoration: none;
+  font-size: 12px;
+ margin-right: 24px;
+ font-weight: lighter;
 }
 
 /* Hover effect */
 .navbar a:hover {
-    color: rgb(246, 231, 205); /* Change text color to orange */
+  color: rgb(246, 231, 205); /* Change text color to orange */
 }
 
 /* Container for search bar and cart */
 .search-container {
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Center the items horizontally */
-    background-color: #F85606; /* Matching the orange background */
-    padding: 5px 15px 10px 15px;
-    margin-right: 218px;
+  margin-right: 220px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the items horizontally */
+  background-color: #F85606; /* Matching the orange background */
+  padding: 5px 15px 10px 15px;
+}
+.logo {
+  display: flex;
+  margin-right: 65px;
+  align-items: last baseline;
 }
 
-/* Logo styling */
-.logo {
-    margin-top: 6px;
-    margin-right: 67px; /* Reduced margin for a tighter gap */
-    height: 8px;
-    vertical-align: middle;
+.logo-img {
+  height: 40px; /* Adjust height to fit as needed */
+ 
 }
+
 
 /* Search bar styling */
-
-    .search-bar {
-        border-radius: 2px 0px 0px 2px;
-        width: 560px;
-        padding: 11px; /* Reduced padding for a tighter look */
-        border: none;
-        font-size: 15.5px;
-        outline: none;
-        margin-right: 0; /* Reduced gap between search bar and button */
+.search-bar {
+  border-radius: 2px 0 0 2px; /* Border-radius for rounded corners */
+  width: 645px; /* Adjust the width as necessary */
+  padding: 11px; /* Padding inside the search bar */
+  border: none; /* No border for cleaner look */
+  font-size: 19px;
+  outline: none;
+  margin-right: -20px; /* Adjusted to reduce the gap between the search bar and button */
 }
 
 .search-bar::placeholder {
-    color: #b4b1b1; /* Set the placeholder color */
-    font-size: 12px;
-    text-align: left;
-    letter-spacing: 0px;
-    opacity: 1; /* Fully opaque */
+  color: #b4b1b1; /* Placeholder color */
+  font-size: 14px;
+  text-align: left;
+  letter-spacing: 0px;
+  opacity: 1; /* Fully opaque placeholder */
 }
 
-/* Styles for the button */
 .search-button {
-    background-color: #fad8c3; /* Light peach background color */
-    border: none; /* Remove any border */
-    padding: 10px;
-    width: 40px; /* Width of the button */
-    height: 40.5px; /* Height of the button */
-    display: flex; /* Align icon inside the button */
-    align-items: center;
-    justify-content: center;
+  background-color: #fad8c3; /* Light peach background color */
+  border: none;
+  padding: 10px;
+  width: 44px; /* Adjusted for perfect fit */
+  height: 44px; /* Adjusted height */
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center the search icon */
+  border-radius: 0 2px 2px 0; /* Rounded corners on the right side */
+  cursor: pointer; /* Pointer cursor for the button */
 }
 
-/* Styles for the search icon */
 .search-button .search-icon {
-    width: 22px;
-    height: 22px;
-    filter: brightness(0) saturate(100%) invert(57%) sepia(80%) saturate(2000%) hue-rotate(-20deg);
+  width: 22px;
+  height: 22px;
+  filter: brightness(0) saturate(100%) invert(57%) sepia(80%) saturate(2000%) hue-rotate(-20deg); /* Icon color filter */
 }
+
 
 /* On hover */
 .search-button:hover .search-icon {
-    filter: brightness(0) saturate(100%) invert(45%) sepia(100%) saturate(3000%) hue-rotate(0deg);
+  filter: brightness(0) saturate(100%) invert(45%) sepia(100%) saturate(3000%) hue-rotate(0deg);
 }
 
 
 
-   
+ 
 
 /* Cart icon styling */
 .cart-icon {
-    margin-left: 18px; /* Adjust the margin for a balanced gap */
-    margin-top: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  margin-left: 18px; /* Adjust the margin for a balanced gap */
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Cart icon SVG styling */
 .cart-icon svg {
-    fill: white; /* White cart icon */
-    width: 30px;
-    height: 30px;
+  fill: white; /* White cart icon */
+  width: 30px;
+  height: 30px;
 }
 
+.main{
+  margin-left: 195px;
+  margin-right: 195px;
+}
 /* Carousel container */
 
 .carousel-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-left: 330px;
+  margin-left: 80px; /* Adjust as needed to decrease the left margin */
+  margin-right: 50px; /* Adjust as needed to decrease the right margin */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 /* Main Carousel */
 .main-carousel {
-    width: 70%; /* Adjust the width of the carousel */
+  width: 120%; /* Keeps the carousel full width */
 }
 
 .carousel-cell img {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  object-fit: cover;
+ 
 }
 
 /* Side Section */
 
 .side-section {
-    width: 15.6%; /* Adjust side section width */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-right: 20%;
-    
+  width: 30%; /* Adjust side section width */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 10px;
 }
 
 .app-promotion img {
-    width: 90%;
-    height: 33     0px;
+  width: 100%;
+  height: 30 0px;
 }
 
-  /* categories section  */
+/* categories section  */
 
 .categories-section {
-    margin-left: 270px;   /* Adjusts the left margin */
-    margin-right: 270px;  /* Adjusts the right margin */
-    padding: 20px;        /* Adjusted padding to reduce space */
-    text-align: center;
-    background-color: #f9f9f9;
-    margin-bottom: 0; /* Ensure there's no margin below this section */
+  margin-left: 20px; /* Adjusts the left margin */
+  margin-right: 20px; /* Adjusts the right margin */
+  padding: 20px; /* Adjusted padding to reduce space */
+  text-align: center;
+  background-color: #f9f9f9;
+  margin-bottom: 0; /* Ensure there's no margin below this section */
 }
 
 .categories-section h2 {
-    text-align: left;
-    margin-left: 35px;
-    font-size: 23px;
-    margin-bottom: 10px;
-    font-weight: lighter;
-    color: #575757;
+  text-align: left;
+  margin-left: 35px;
+  font-size: 23px;
+  margin-bottom: 10px;
+  font-weight: lighter;
+  color: #575757;
 }
 
 .categories-grid {
-    display: grid;
-    grid-template-columns: repeat(8, 1fr); /* 8 items per row */
-    padding-left: 35px; /* Left padding */
-    padding-right: 35px; /* Right padding */
+  display: grid;
+  grid-template-columns: repeat(8, 1fr); /* 8 items per row */
+  padding-left: 35px; /* Left padding */
+  padding-right: 35px; /* Right padding */
 }
 
 .category-item {
-    background-color: white;
-    padding: 10px;
-    box-shadow: 0 9px 9px rgba(2, 2, 2, 0.1);
-    text-align: center;
-    border: 0.1px solid rgb(238, 238, 238); /* Add this line for a thin black border */
-    transition: transform 0.2s ease, box-shadow 0.7s ease; /* Smooth transition for the hover effect */
+  background-color: white;
+  padding: 10px;
+  box-shadow: 0 9px 9px rgba(2, 2, 2, 0.1);
+  text-align: center;
+  border: 0.1px solid rgb(238, 238, 238); /* Add this line for a thin black border */
+  transition: transform 0.2s ease, box-shadow 0.7s ease; /* Smooth transition for the hover effect */
 }
 
 .category-item:hover {
-    transform: scale(1.02); /* Reduce the enlargement to 2% */
-    box-shadow: 0 5px 5px rgba(2, 2, 2, 0.1); /* Decrease the shadow effect */
+  transform: scale(1.02); /* Reduce the enlargement to 2% */
+  box-shadow: 0 5px 5px rgba(2, 2, 2, 0.1); /* Decrease the shadow effect */
 }
 
-
-
 .category-item img {
-    width: 90px; /* Adjust this size as needed */
-    height: 70px;
-    object-fit: contain;
-    margin-bottom: 10px;
+  width: 90px; /* Adjust this size as needed */
+  height: 70px;
+  object-fit: contain;
+  margin-bottom: 10px;
 }
 
 .category-item p {
-    font-size: 14px;
-    color: #333;
-    margin: 0;
+  font-size: 14px;
+  color: #333;
+  margin: 0;
 }
-   
 
 /* Just for You section */
 
 .just-for-you {
-    margin-left: 320px;   /* Adjusts the left margin */
-    margin-right: 310px;  /* Adjusts the right margin */
-    padding: 10px 0; /* Reduced padding for consistency */
+  margin-left: 60px; /* Adjusts the left margin */
+  margin-right: 60px; /* Adjusts the right margin */
+  padding: 10px 0; /* Reduced padding for consistency */
 }
 
 .just-for-you h2 {
-    text-align: left;
-    margin-left: 5px;
-    font-size: 24px; /* Keep the font size the same */
-    margin-bottom: 10px; /* Space below the heading */
-    font-weight: lighter; /* Keep the font weight the same */
-    color: #333; /* Text color */
+  text-align: left;
+  margin-left: 5px;
+  font-size: 24px; /* Keep the font size the same */
+  margin-bottom: 10px; /* Space below the heading */
+  font-weight: lighter; /* Keep the font weight the same */
+  color: #333; /* Text color */
 }
 
 .just-for-you-grid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr); /* 6 items per row */
-    gap: 10px; /* Matching the gap from More Products */
-    margin: 0; /* Remove additional margins for grid */
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* 6 items per row */
+  gap: 10px; /* Matching the gap from More Products */
+  margin: 0; /* Remove additional margins for grid */
 }
 
 .just-for-you-item {
-    background-color: white; /* Keep the background color the same */
-    padding: 10px; /* Padding for aesthetics */
-    
-    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition */
-    border-radius: 5px; /* Rounded corners for consistency */
-    height: auto; /* Let height adjust based on content */
+  background-color: white; /* Keep the background color the same */
+  padding: 10px; /* Padding for aesthetics */
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition */
+  border-radius: 5px; /* Rounded corners for consistency */
+  height: auto; /* Let height adjust based on content */
 }
 
 /* Hover effect */
 .just-for-you-item:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect from all sides */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect from all sides */
 }
 
 .just-for-you-item img {
-    width: 100%; /* Full width to fit the card */
-    height: auto; /* Maintain image aspect ratio */
-    object-fit: cover; /* Ensures the aspect ratio is maintained */
+  width: 100%; /* Full width to fit the card */
+  height: auto; /* Maintain image aspect ratio */
+  object-fit: cover; /* Ensures the aspect ratio is maintained */
 }
 
 .just-for-you-item p {
-    margin: 2px 0; /* Reduced margin for smaller size */
-    text-align: left; /* Align text to the left */
-    font-size: 12px; /* Font size for product name */
+  margin: 2px 0; /* Reduced margin for smaller size */
+  text-align: left; /* Align text to the left */
+  font-size: 12px; /* Font size for product name */
 }
 
 .just-for-you-item .price {
-    color: red; /* Color for price */
-    font-weight: lighter; /* Bold text for price */
-    font-size: 15px; /* Font size for price */
-    margin: 4px 0; /* Space below the price */
+  color: red; /* Color for price */
+  font-weight: lighter; /* Bold text for price */
+  font-size: 15px; /* Font size for price */
+  margin: 4px 0; /* Space below the price */
 }
 
 .just-for-you-item .discount {
-    color: black; /* Color for discount text */
-    font-size: 10px; /* Font size for discount */
-    font-weight: lighter; /* Keep font weight light */
-    display: block; /* Stack the elements */
-    text-align: left; /* Align text to the left */
-    margin-bottom: 5px; /* Space below discount */
+  color: black; /* Color for discount text */
+  font-size: 10px; /* Font size for discount */
+  font-weight: lighter; /* Keep font weight light */
+  display: block; /* Stack the elements */
+  text-align: left; /* Align text to the left */
+  margin-bottom: 5px; /* Space below discount */
 }
 
 .just-for-you-item .rating {
-    color: rgb(183, 181, 181); /* Color for rating stars */
-    font-size: 9px; /* Font size for rating */
+  color: rgb(183, 181, 181); /* Color for rating stars */
+  font-size: 9px; /* Font size for rating */
 }
 .rating {
-    color: gold; /* Set text color to gold */
+  color: gold; /* Set text color to gold */
 }
 
 .rating i {
-    color: gold; /* Set the star icon color to gold */
+  color: gold; /* Set the star icon color to gold */
 }
 
-
-
- /* more products section  */
+/* more products section  */
 
 .load-more-container {
-    display: flex;
-    justify-content: center; /* Center the button */
-    margin: 10px 100px; /* Aligning margins with More Products */
-
+  display: flex;
+  justify-content: center; /* Center the button */
+  margin: 10px 100px; /* Aligning margins with More Products */
 }
 
 .load-more-button {
-    padding: 8px 140px; /* Adjust padding */
-    font-size: 14px; /* Font size for button text */
-    color: #91bae5; /* Text color */
-    background-color: transparent; /* No background color */
-    border: 1px solid #97b9de; /* Border color */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s, color 0.3s; /* Transition for hover effect */
+  padding: 8px 140px; /* Adjust padding */
+  font-size: 14px; /* Font size for button text */
+  color: #91bae5; /* Text color */
+  background-color: transparent; /* No background color */
+  border: 1px solid #97b9de; /* Border color */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s, color 0.3s; /* Transition for hover effect */
 }
 
-
-
 .container {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr); /* 6 items per row */
-    gap: 10px; /* Space between items */
-    margin-left: 320px;   /* Adjusts the left margin */
-    margin-right: 310px;  /* Adjusts the right margin */
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* 6 items per row */
+  gap: 10px; /* Space between items */
+  margin-left: 60px; /* Adjusts the left margin */
+  margin-right: 60px; /* Adjusts the right margin */
 }
 
 .product {
-    display: none; /* Initially hide all products */
-    background-color: white;
-    padding: 10px; /* Padding for aesthetics */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition */
-    border-radius: 2px; /* Rounded corners */
-    height: auto; /* Allow height to adjust based on content */
+  display: none; /* Initially hide all products */
+  background-color: white;
+  padding: 10px; /* Padding for aesthetics */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition */
+  border-radius: 2px; /* Rounded corners */
+  height: auto; /* Allow height to adjust based on content */
 }
 
 /* Hover effect */
 .product:hover {
-    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1); /* Increase shadow for emphasis */
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1); /* Increase shadow for emphasis */
 }
 
 .product img {
-    width: 100%; /* Full width to fit the card */
-    height: auto; /* Fixed height for images */
-    border-radius: 5px; /* Rounded corners for images */
-    object-fit: cover; /* Ensures the aspect ratio is maintained */
+  width: 100%; /* Full width to fit the card */
+  height: auto; /* Fixed height for images */
+  border-radius: 5px; /* Rounded corners for images */
+  object-fit: cover; /* Ensures the aspect ratio is maintained */
 }
 
 .product h3 {
-    font-size: 12px; /* Font size for product name */
-    margin: 3px 0; /* Margin for spacing */
-    font-weight: lighter; /* Normal weight for headings */
-    text-align: left; /* Align text to the left */
+  font-size: 12px; /* Font size for product name */
+  margin: 3px 0; /* Margin for spacing */
+  font-weight: lighter; /* Normal weight for headings */
+  text-align: left; /* Align text to the left */
 }
 
 .price {
-    color: red; /* Color for price */
-    font-weight: lighter; /* Bold text for price */
-    font-size: 15px; /* Font size for price */
-    margin: 4px 0; /* Space below the price */
+  color: red; /* Color for price */
+  font-weight: lighter; /* Bold text for price */
+  font-size: 15px; /* Font size for price */
+  margin: 4px 0; /* Space below the price */
 }
 
 .discount {
-    color: rgb(234, 9, 9); /* Color for discount */
-    font-size: 12px; /* Font size for discount */
+  color: rgb(234, 9, 9); /* Color for discount */
+  font-size: 12px; /* Font size for discount */
 }
 
 .rating {
-    color: rgb(183, 181, 181); /* Color for rating stars */
-    font-size: 9px; /* Font size for rating */
+  color: rgb(183, 181, 181); /* Color for rating stars */
+  font-size: 9px; /* Font size for rating */
 }
-
 
 .sidebar {
-    width: 20px;
-    background-color: #f4f4f4;
-    padding: 20px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0; /* Sticks to the top of the viewport */
-    left: 20px; /* Distance from the left */
+  width: 25px;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  background-color: #f4f4f4;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  margin: 0;
+  bottom: 20px; /* Distance from the bottom */
+  left: 20px; /* Distance from the left */
 }
 
-
 .sidebar ul {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
 }
 
 .sidebar ul li {
-    margin: 10px 0;
+  margin: 10px 0;
 }
 
 .sidebar ul li a {
-    text-decoration: none;
-    color: #6d6d6d;
-    padding: 8px;
-    display: flex;
-    align-items: center;
-    
+  text-decoration: none;
+  color: #6d6d6d;
+  padding: 8px;
+  display: flex;
+  align-items: center;
 }
-
 
 .sidebar ul li a:hover {
-    background-color: #fbfbfb;
+  background-color: #fbfbfb;
 }
 .footer {
-    padding: 30px;
-    color: #564a74;
-    background-color: #f4f4f4; /* Adjust as needed */
+  padding: 30px;
+  color: #564a74;
+  background-color: #f4f4f4; /* Adjust as needed */
 }
 
 .footer-container {
-    margin-left: 320px;   /* Adjusts the left margin */
-    margin-right: 310px;  /* Adjusts the right margin */
-    display: flex;
-    justify-content: center; /* Center all footer sections */
-    align-items: flex-start;
-    max-width: 100%; /* Prevent overflow */
+  margin-left: 40px; /* Adjusts the left margin */
+  margin-right: 40px; /* Adjusts the right margin */
+  display: flex;
+  justify-content: center; /* Center all footer sections */
+  align-items: flex-start;
+  max-width: 100%; /* Prevent overflow */
 }
 
 .footer-section {
-    flex: 1;
-    margin: 0 15px; /* Adjust margin to reduce the gap */
+  flex: 1;
+  margin: 0 17px; /* Adjust margin to reduce the gap */
 }
 
 .footer-section h3 {
-    font-size: 15px;
-    color: #564a74;
-    margin-bottom: 5px;
+  font-size: 15px;
+  color: #564a74;
+  margin-bottom: 5px;
 }
 
 .footer-section ul {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
 }
 
 .footer-section ul li {
-    margin-bottom: 0px; /* Reduced gap between list items */
+  margin-bottom: 0px; /* Reduced gap between list items */
 }
 
 .footer-section ul li a {
-    text-decoration: none;
-    color: #564a74;
-    font-size: 8px;
-    line-height: normal; /* Set to 'normal' or a specific value if needed */
-    word-spacing: 0px;
+  text-decoration: none;
+  color: #564a74;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: normal; /* Set to 'normal' or a specific value if needed */
+  word-spacing: 0px;
 }
 
 .footer-section ul li a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
-
 
 /* App download section */
 .app-download {
-    display: flex;
-    align-items: center;
-    margin-top: 20px; /* Optional: add some space above the app download section */
+  display: flex;
+  align-items: center;
+  margin-right: -50px;
+  margin-top: 20px; /* Optional: add some space above the app download section */
 }
 
 .app-logo-text {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .logo-image {
-    width: 50px;
-    height: auto;
-    margin-right: 15px;
+  width: 50px;
+  height: auto;
+  margin-right: 15px;
 }
 
 .app-text {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center text in the app text */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center text in the app text */
 }
 
 .app-text h3 {
-    color: #ff6600;
-    font-size: 18px;
-    margin: 0;
-    font-weight: normal;
-    text-align: center; /* Center the text */
+  color: #ff6600;
+  font-size: 18px;
+  margin: 0;
+  font-weight: normal;
+  text-align: center; /* Center the text */
 }
 
 .app-text p {
-    margin: 5px 0 0;
+  margin: 5px 0 0;
 }
 
 .app-text a {
-    color: #4c3f6b;
-    font-size: 14px;
-    text-decoration: none;
+  color: #4c3f6b;
+  font-size: 14px;
+  text-decoration: none;
 }
 
 .app-text a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 /* App buttons */
 .app-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: center; /* Center the buttons */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center; /* Center the buttons */
 }
 
 .app-button img {
-    width: 120px;
-    height: auto;
+  width: 120px;
+  height: auto;
 }
 @media (max-width: 768px) {
-    .navbar {
-        margin-left: 0; /* Center navbar items on smaller screens */
-        flex-direction: column; /* Stack navbar items vertically */
-    }
+  .navbar {
+    margin-left: 0; /* Center navbar items on smaller screens */
+    flex-direction: column; /* Stack navbar items vertically */
+  }
 
-    .carousel-container,
-    .categories-section,
-    .just-for-you {
-        margin-left: 20px;
-        margin-right: 20px; /* Adjust margins for mobile */
-    }
+  .carousel-container,
+  .categories-section,
+  .just-for-you {
+    margin-left: 20px;
+    margin-right: 20px; /* Adjust margins for mobile */
+  }
 
-    .search-bar {
-        width: 100%; /* Make the search bar full width */
-    }
+  .search-bar {
+    width: 100%; /* Make the search bar full width */
+  }
 }
