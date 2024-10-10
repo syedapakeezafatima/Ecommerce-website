@@ -19,8 +19,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     loadMoreButton.addEventListener('click', () => {
-        currentProducts += 6; // Increase the number of products to display by 6
+        // If currentProducts is 0, show all products
+        if (currentProducts === 0) {
+            currentProducts = allProducts.length; // Set to total products
+        } else {
+            currentProducts += 6; // Increase the number of products to display by 6
+        }
         displayProducts();
+        
+        // Move the newly displayed products to the bottom (optional)
+        const displayedProducts = Array.from(allProducts).slice(0, currentProducts);
+        displayedProducts.forEach(product => {
+            product.parentNode.appendChild(product); // Move product to the end of the parent
+        });
     });
 
     // Initial call to display the first set of products

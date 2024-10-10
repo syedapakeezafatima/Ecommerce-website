@@ -313,7 +313,7 @@ header {
 .load-more-container {
   display: flex;
   justify-content: center; /* Center the button */
-  margin: 10px 100px; /* Aligning margins with More Products */
+  margin: 2px 100px; /* Aligning margins with More Products */
 }
 
 .load-more-button {
@@ -394,6 +394,7 @@ header {
   left: 20px; /* Distance from the left */
 }
 
+
 .sidebar ul {
   list-style: none;
   padding: 0;
@@ -424,7 +425,7 @@ header {
   margin-left: 40px; /* Adjusts the left margin */
   margin-right: 40px; /* Adjusts the right margin */
   display: flex;
-  justify-content: center; /* Center all footer sections */
+  justify-content: space-between; /* Space between footer sections */
   align-items: flex-start;
   max-width: 100%; /* Prevent overflow */
 }
@@ -466,13 +467,13 @@ header {
 .app-download {
   display: flex;
   align-items: center;
-  margin-right: -50px;
-  margin-top: 20px; /* Optional: add some space above the app download section */
+  margin-right: 40px; /* Adjust for positioning */
 }
 
 .app-logo-text {
   display: flex;
   align-items: center;
+  
 }
 
 .logo-image {
@@ -483,8 +484,8 @@ header {
 
 .app-text {
   display: flex;
+  margin-left: 0px;
   flex-direction: column;
-  align-items: center; /* Center text in the app text */
 }
 
 .app-text h3 {
@@ -498,43 +499,34 @@ header {
 .app-text p {
   margin: 5px 0 0;
 }
-
-.app-text a {
-  color: #4c3f6b;
-  font-size: 14px;
-  text-decoration: none;
-}
-
-.app-text a:hover {
-  text-decoration: underline;
-}
-
-/* App buttons */
 .app-buttons {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
-  align-items: center; /* Center the buttons */
+  flex-wrap: wrap; /* Allows wrapping to the next line */
+  justify-content: center; /* Center the buttons */
+  margin-top: 30px; /* Add space above the buttons */
+}
+
+.app-button {
+  display: flex;
+  flex-direction: column; /* Stack image and text vertically */
+  align-items: center; /* Center align the content */
+  margin: 10px; /* Add margin for spacing */
 }
 
 .app-button img {
-  width: 120px;
-  height: auto;
+  width: 120px; /* Set the desired width for the images */
+  height: auto; /* Maintain aspect ratio */
 }
-@media (max-width: 768px) {
-  .navbar {
-    margin-left: 0; /* Center navbar items on smaller screens */
-    flex-direction: column; /* Stack navbar items vertically */
-  }
 
-  .carousel-container,
-  .categories-section,
-  .just-for-you {
-    margin-left: 20px;
-    margin-right: 20px; /* Adjust margins for mobile */
-  }
+/* Ensure the last button takes the full width */
+.full-width {
+  flex-basis: 100%; /* Make this button take full width */
+  text-align: center; /* Center the text */
+}
 
-  .search-bar {
-    width: 100%; /* Make the search bar full width */
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .app-button img {
+      width: 100px; /* Adjust image size for smaller screens */
   }
 }
