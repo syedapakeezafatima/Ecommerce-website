@@ -317,13 +317,15 @@ header {
 }
 
 .load-more-button {
-  padding: 8px 140px; /* Adjust padding */
+  padding: 10px 140px; /* Adjust padding */
   font-size: 14px; /* Font size for button text */
   color: #91bae5; /* Text color */
   background-color: transparent; /* No background color */
   border: 1px solid #97b9de; /* Border color */
   cursor: pointer; /* Pointer cursor on hover */
   transition: background-color 0.3s, color 0.3s; /* Transition for hover effect */
+  margin-bottom: 15px;
+  margin-top: 15px;
 }
 
 .container {
@@ -510,19 +512,25 @@ header {
   display: flex;
   flex-direction: column; /* Stack image and text vertically */
   align-items: center; /* Center align the content */
-  margin: 10px; /* Add margin for spacing */
+  padding: 20px; /* Increase padding around the button */
+  width: 150px; /* Set a wider fixed width */
+  height: 150px; /* Set a taller fixed height */
+  box-sizing: border-box; /* Ensure padding is included in the size */
 }
 
 .app-button img {
-  width: 120px; /* Set the desired width for the images */
+  width: 120px; /* Increase the width for a larger image */
   height: auto; /* Maintain aspect ratio */
 }
 
 /* Ensure the last button takes the full width */
 .full-width {
-  flex-basis: 100%; /* Make this button take full width */
-  text-align: center; /* Center the text */
+  flex-basis: 90%; /* Make this button take full width */
+  text-align: left; /* Align the text to the left */
 }
+
+}
+
 
 /* Responsive adjustments */
 @media (max-width: 600px) {
