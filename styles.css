@@ -2,7 +2,8 @@ body {
   font-family: Roboto-Regular, Helvetica Neue, Helvetica, Tahoma, Arial,
     Sans-serif;
   margin: 0;
-  background-color: #f9f9f9;
+  background-color: #f4f4f4; /* Adjust as needed */
+
 }
 header {
   display: flex;
@@ -143,8 +144,9 @@ header {
 /* Carousel container */
 
 .carousel-container {
+
   margin-left: 80px; /* Adjust as needed to decrease the left margin */
-  margin-right: 50px; /* Adjust as needed to decrease the right margin */
+  margin-right: 60px; /* Adjust as needed to decrease the right margin */
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -152,7 +154,8 @@ header {
 
 /* Main Carousel */
 .main-carousel {
-  width: 120%; /* Keeps the carousel full width */
+  
+  width: 165%; /* Keeps the carousel full width */
 }
 
 .carousel-cell img {
@@ -160,11 +163,12 @@ header {
   object-fit: cover;
  
 }
+/* 
 
 /* Side Section */
 
 .side-section {
-  width: 30%; /* Adjust side section width */
+  width: 35%; /* Adjust side section width */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -174,14 +178,13 @@ header {
 .app-promotion img {
   width: 100%;
   height: 340px;
-}
+} */
 
 /* categories section  */
 
 .categories-section {
-  margin-left: 20px; /* Adjusts the left margin */
-  margin-right: 20px; /* Adjusts the right margin */
-  padding: 20px; /* Adjusted padding to reduce space */
+ 
+  padding: 30px; /* Adjusted padding to reduce space */
   text-align: center;
   background-color: #f9f9f9;
   margin-bottom: 0; /* Ensure there's no margin below this section */
@@ -189,7 +192,7 @@ header {
 
 .categories-section h2 {
   text-align: left;
-  margin-left: 35px;
+  margin-left: 69px;
   font-size: 23px;
   margin-bottom: 10px;
   font-weight: lighter;
@@ -199,8 +202,8 @@ header {
 .categories-grid {
   display: grid;
   grid-template-columns: repeat(8, 1fr); /* 8 items per row */
-  padding-left: 35px; /* Left padding */
-  padding-right: 35px; /* Right padding */
+  padding-left: 70px; /* Left padding */
+  padding-right: 70px; /* Right padding */
 }
 
 .category-item {
