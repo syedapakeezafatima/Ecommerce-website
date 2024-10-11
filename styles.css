@@ -477,18 +477,20 @@ header {
 /* Logo and Text (Happy Shopping) */
 .app-logo-text {
   display: flex;
+  font-weight: lighter;
   align-items: center;
   margin-bottom: 50px;
   margin-right: 20px; /* Space between text and app buttons */
 }
 
 .logo-image {
-  width: 80px; /* Adjust the logo size */
+  width: 50px; /* Adjust the logo size */
   height: 50px;
   margin-right: 10px; /* Space between the logo and text */
 }
 
 .app-text h3 {
+  font-weight: lighter;
   color: #ff6600; /* Orange text */
   font-size: 18px;
   margin: 0;
@@ -504,7 +506,7 @@ header {
 .app-buttons {
   display: grid;
   grid-template-columns: repeat(2, auto); /* 2 buttons in the first row */
-  gap: 15px; /* Gap between the buttons */
+  gap: 0px; /* Gap between the buttons */
   align-items: start; /* Align items at the top of the row */
 }
 
