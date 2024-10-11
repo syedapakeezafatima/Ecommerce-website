@@ -192,7 +192,7 @@ header {
 
 .categories-section h2 {
   text-align: left;
-  margin-left: 69px;
+  margin-left: 6px;
   font-size: 23px;
   margin-bottom: 10px;
   font-weight: lighter;
@@ -385,41 +385,48 @@ header {
   font-size: 9px; /* Font size for rating */
 }
 
+
 .sidebar {
-  width: 25px;
-  display: flex;
-  justify-items: center;
-  align-items: center;
+  width: 45px; /* Small width for the sidebar */
   background-color: #f4f4f4;
-  padding: 20px;
+  padding: 10px 0; /* Add vertical padding */
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   position: fixed;
-  margin: 0;
-  bottom: 20px; /* Distance from the bottom */
-  left: 20px; /* Distance from the left */
+  bottom: 10px; /* Distance from the bottom */
+  left: 10px; /* Distance from the left */
+  border-radius: 5px; /* Rounded corners */
 }
 
-
-.sidebar ul {
+.icon-list {
   list-style: none;
   padding: 0;
-}
-
-.sidebar ul li {
-  margin: 10px 0;
-}
-
-.sidebar ul li a {
-  text-decoration: none;
-  color: #6d6d6d;
-  padding: 8px;
+  margin: 0;
   display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
-.sidebar ul li a:hover {
-  background-color: #fbfbfb;
+.icon-list li {
+  margin: 5px 8px; /* Space between each icon box */
 }
+
+.icon-list li img {
+  width: 15px; /* Icon size */
+  height: 15px;
+  padding: 10px;
+  background-color: #f8f8f8; /* Background for the square */
+  border: 1px solid #e0e0e0; /* Light border around the icon */
+  border-radius: 5px; /* Slightly rounded corners */
+  display: block;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05); /* Soft shadow around the icon */
+  transition: background-color 0.3s;
+}
+
+.icon-list li img:hover {
+  background-color: #f69947; /* Hover effect: subtle background change */
+}
+
+
 
 
 
