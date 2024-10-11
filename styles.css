@@ -417,6 +417,9 @@ header {
 .sidebar ul li a:hover {
   background-color: #fbfbfb;
 }
+
+
+
 .footer {
   padding: 30px;
   color: #564a74;
@@ -464,77 +467,62 @@ header {
 .footer-section ul li a:hover {
   text-decoration: underline;
 }
-
-/* App download section */
+/* App Download Section */
 .app-download {
   display: flex;
   align-items: center;
-  margin-right: 40px; /* Adjust for positioning */
+  padding: 9px;
 }
 
+/* Logo and Text (Happy Shopping) */
 .app-logo-text {
   display: flex;
   align-items: center;
-  
+  margin-bottom: 50px;
+  margin-right: 20px; /* Space between text and app buttons */
 }
 
 .logo-image {
-  width: 50px;
-  height: auto;
-  margin-right: 15px;
-}
-
-.app-text {
-  display: flex;
-  margin-left: 0px;
-  flex-direction: column;
+  width: 80px; /* Adjust the logo size */
+  height: 50px;
+  margin-right: 10px; /* Space between the logo and text */
 }
 
 .app-text h3 {
-  color: #ff6600;
+  color: #ff6600; /* Orange text */
   font-size: 18px;
   margin: 0;
-  font-weight: normal;
-  text-align: center; /* Center the text */
 }
 
 .app-text p {
-  margin: 5px 0 0;
+  color: #502780; /* Purple text */
+  font-size: 14px;
+  margin: 0;
 }
+
+/* App Store Buttons */
 .app-buttons {
-  display: flex;
-  flex-wrap: wrap; /* Allows wrapping to the next line */
-  justify-content: center; /* Center the buttons */
-  margin-top: 30px; /* Add space above the buttons */
+  display: grid;
+  grid-template-columns: repeat(2, auto); /* 2 buttons in the first row */
+  gap: 15px; /* Gap between the buttons */
+  align-items: start; /* Align items at the top of the row */
 }
 
 .app-button {
   display: flex;
-  flex-direction: column; /* Stack image and text vertically */
-  align-items: center; /* Center align the content */
-  padding: 20px; /* Increase padding around the button */
-  width: 150px; /* Set a wider fixed width */
-  height: 150px; /* Set a taller fixed height */
-  box-sizing: border-box; /* Ensure padding is included in the size */
+  justify-content: center;
+  align-items: center;
+  width: 150px; /* Fixed width for buttons */
+  height: 50px; /* Height for buttons */
 }
 
 .app-button img {
-  width: 120px; /* Increase the width for a larger image */
-  height: auto; /* Maintain aspect ratio */
+  width: 140px; /* Size of the app store images */
+  height: auto;
 }
 
-/* Ensure the last button takes the full width */
+/* Full width button (third row) */
 .full-width {
-  flex-basis: 90%; /* Make this button take full width */
-  text-align: left; /* Align the text to the left */
-}
-
-}
-
-
-/* Responsive adjustments */
-@media (max-width: 600px) {
-  .app-button img {
-      width: 100px; /* Adjust image size for smaller screens */
-  }
+  grid-column: 1 / -1; /* Span across the full width of the grid */
+  justify-self: start; /* Align the third button to the left */
 }
