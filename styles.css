@@ -63,12 +63,12 @@ header {
 }
 .logo {
   display: flex;
-  margin-right: 65px;
+  margin-right: 99px;
   align-items: last baseline;
 }
 
 .logo-img {
-  height: 40px; /* Adjust height to fit as needed */
+  height: 42px; /* Adjust height to fit as needed */
  
 }
 
@@ -81,7 +81,7 @@ header {
   border: none; /* No border for cleaner look */
   font-size: 19px;
   outline: none;
-  margin-right: -20px; /* Adjusted to reduce the gap between the search bar and button */
+  margin-right: -8px; /* Adjusted to reduce the gap between the search bar and button */
 }
 
 .search-bar::placeholder {
@@ -192,7 +192,7 @@ header {
 
 .categories-section h2 {
   text-align: left;
-  margin-left: 6px;
+  margin-left: 67px;
   font-size: 23px;
   margin-bottom: 10px;
   font-weight: lighter;
@@ -257,7 +257,7 @@ header {
   margin: 0; /* Remove additional margins for grid */
 }
 
-.just-for-you-item {
+.just-for-you-item  {
   background-color: white; /* Keep the background color the same */
   padding: 10px; /* Padding for aesthetics */
 
@@ -277,7 +277,13 @@ header {
   object-fit: cover; /* Ensures the aspect ratio is maintained */
 }
 
+.just-for-you-item a {
+  text-decoration: none; /* Removes underline from the link */
+  color: inherit; /* Inherits the color from the parent element */
+}
+
 .just-for-you-item p {
+  color: black; /* Change text color to black */
   margin: 2px 0; /* Reduced margin for smaller size */
   text-align: left; /* Align text to the left */
   font-size: 12px; /* Font size for product name */
@@ -361,12 +367,18 @@ header {
   object-fit: cover; /* Ensures the aspect ratio is maintained */
 }
 
+.product a {
+  text-decoration: none; /* Removes the underline from the link */
+}
+
 .product h3 {
+  color: #333;
   font-size: 12px; /* Font size for product name */
   margin: 3px 0; /* Margin for spacing */
   font-weight: lighter; /* Normal weight for headings */
   text-align: left; /* Align text to the left */
 }
+
 
 .price {
   color: red; /* Color for price */
@@ -407,18 +419,18 @@ header {
 }
 
 .icon-list li {
-  margin: 5px 8px; /* Space between each icon box */
+  margin: 1px 8px; /* Space between each icon box */
 }
 
 .icon-list li img {
   width: 15px; /* Icon size */
   height: 15px;
   padding: 10px;
-  background-color: #f8f8f8; /* Background for the square */
-  border: 1px solid #e0e0e0; /* Light border around the icon */
+  background-color: #f4f4f4; /* Background for the square */
+  border: 1px solid #f4f4f4; /* Light border around the icon */
   border-radius: 5px; /* Slightly rounded corners */
   display: block;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05); /* Soft shadow around the icon */
+  box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.05); /* Soft shadow around the icon */
   transition: background-color 0.3s;
 }
 
@@ -537,4 +549,126 @@ header {
 .full-width {
   grid-column: 1 / -1; /* Span across the full width of the grid */
   justify-self: start; /* Align the third button to the left */
+}
+
+
+
+
+
+.product-details {
+
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.product-container {
+  display: flex;
+  gap: 20px;
+  max-width: 800px;
+}
+
+.product-images {
+  flex: 1;
+}
+
+.product-image {
+  width: 100%;
+  max-width: 250px;
+  border: 1px solid #ccc;
+}
+
+.product-info {
+  flex: 2;
+}
+
+.product-name {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.product-ratings {
+  font-size: 14px;
+  color: gold;
+}
+
+.stars {
+  margin-right: 10px;
+}
+
+.brand-info {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.price-section {
+  margin: 15px 0;
+}
+
+.current-price {
+  font-size: 24px;
+  color: #e74c3c;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.original-price {
+  text-decoration: line-through;
+  margin-right: 10px;
+  color: #999;
+}
+
+.discount {
+  font-size: 14px;
+  color: #27ae60;
+}
+
+.promotion {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #f39c12;
+}
+
+/* .color-selection {
+  margin-top: 10px;
+  font-size: 14px;
+} */
+
+.color-box {
+  background-color: grey;
+  padding: 5px;
+  border-radius: 5px;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.quantity-selection {
+  margin-top: 20px;
+}
+
+.quantity-selection input {
+  width: 50px;
+  padding: 5px;
+  margin-left: 10px;
+}
+
+.actions {
+  margin-top: 20px;
+}
+
+.buy-now {
+  background-color: #3498db;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.add-to-cart {
+  background-color: #f39c12;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
 }

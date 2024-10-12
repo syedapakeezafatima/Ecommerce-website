@@ -37,3 +37,27 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial call to display the first set of products
     displayProducts(); // This will show 0 products initially
 });
+// Get the product ID from the URL
+const params = new URLSearchParams(window.location.search);
+const productId = params.get('id');
+
+// Example product data (replace with your own API call or database query)
+const products = [
+    { id: 1, name: "Product 1", price: 19.99, description: "Description for Product 1" },
+    { id: 2, name: "Product 2", price: 29.99, description: "Description for Product 2" },
+    // Add more products here
+];
+
+// Find the product by ID
+const product = products.find(p => p.id == productId);
+
+// Update the HTML with product details
+if (product) {
+    document.querySelector('.product-name').textContent = product.name;
+    document.querySelector('.product-price').textContent = `$${product.price}`;
+    document.querySelector('.product-description').textContent = product.description;
+}
+
+
+
+

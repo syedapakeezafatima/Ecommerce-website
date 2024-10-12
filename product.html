@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <nav class="navbar">
+                <a href="#">SAVE MORE ON APP</a>
+                <a href="#">Sell ON DARAZ</a>
+                <a href="#">HELP & SUPPORT</a>
+                <a href="#">LOGIN</a>
+                <a href="#">SIGN UP</a>
+                <a href="#">زبان تبدیل کریں</a>
+
+            </nav>
+        </div>
+        <div class="search-container">
+            <div class="logo">
+                <img src="daraz 2.png" alt="Daraz Logo" class="logo-img">
+                
+            </div>
+            
+            <input type="text" placeholder="Search in Daraz" class="search-bar">
+            <button class="search-button">
+                      <img src="icon (2).png" alt="Search Icon" class="search-icon">
+                              </button>
+            <a href="#" class="cart-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 48 48">
+                  <path d="M 3.5 6 A 1.50015 1.50015 0 1 0 3.5 9 L 6.2558594 9 C 6.9837923 9 7.5905865 9.5029243 7.7285156 10.21875 L 8.0273438 11.78125 L 11.251953 28.716797 C 11.835068 31.772321 14.527135 34 17.638672 34 L 36.361328 34 C 39.472865 34 42.166064 31.773177 42.748047 28.716797 L 45.972656 11.78125 A 1.50015 1.50015 0 0 0 44.5 10 L 10.740234 10 L 10.675781 9.6582031 C 10.272657 7.5455321 8.4069705 6 6.2558594 6 L 3.5 6 z M 11.3125 13 L 42.6875 13 L 39.800781 28.15625 C 39.484764 29.81587 38.051791 31 36.361328 31 L 17.638672 31 C 15.948808 31 14.516781 29.8158 14.199219 28.15625 L 14.199219 28.154297 L 11.3125 13 z M 20 36 A 3 3 0 0 0 20 42 A 3 3 0 0 0 20 36 z M 34 36 A 3 3 0 0 0 34 42 A 3 3 0 0 0 34 36 z"></path>
+                </svg>
+              </a>
+                          
+              
+        </div>
+        
+    </header>
+    <div class="product-details">
+        <div class="product-container">
+            <div class="product-images">
+                <img src="your-product-image.jpg" alt="Product Image" class="product-image">
+            </div>
+            <div class="product-info">
+                <h1 class="product-name">Loading...</h1>
+                <div class="product-ratings">
+                    <span class="stars">★★★★☆</span>
+                </div>
+                <div class="brand-info">
+                    <span class="brand-name">Brand: No Brand</span><br>
+                    <span class="other-info">Every product we offer undergoes rigorous quality control to guarantee performance and longevity. As a customer-centric brand, we are dedicated to offering solutions that blend affordability with exceptional value."</span>
+                </div>
+                <div class="price-section">
+                    <span class="current-price">Rs. 191</span>
+                    <span class="original-price">Rs. 999</span>
+                    <span class="discount">(81% off)</span>
+                </div>
+                <div class="promotion">
+                    <span>Min. spend Rs. 499</span>
+                </div>
+                <div class="quantity-selection">
+                    <label for="quantity">Quantity</label>
+                    <input type="number" id="quantity" name="quantity" min="1" value="1">
+                </div>
+                <div class="actions">
+                    <button class="buy-now">Buy Now</button>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Get the product ID from the URL
+        const params = new URLSearchParams(window.location.search);
+        const productId = params.get('id');
+    
+        // Example product data (replace this with your actual data)
+        const products = [
+    { id: 1, name: "Ultra IN 1 Straps 49MM BIG Display", price: "Rs. 2,095", description: "High-quality 49MM big display straps for Ultra Watches.", image: "chuchu.webp" },
+    { id: 2, name: "Airpods Pro Wireless Earbuds", price: "Rs. 599", description: "Bluetooth 5.0 wireless earbuds with noise cancellation.", image: "flower.webp" },
+    { id: 3, name: "Chromebook N23/N22", price: "Rs. 8,197", description: "Lenovo Chromebook with Playstore support.", image: "led.webp" },
+    { id: 4, name: "Sport Watch Military Waterproof", price: "Rs. 336", description: "Durable waterproof sports watch with military features.", image: "chuchu.webp" },
+    { id: 5, name: "Mister Traders Brand 3D Islamic Clock", price: "Rs. 208", description: "Stylish 3D Islamic clock for home decor.", image: "flower.webp" },
+    { id: 6, name: "Zipper Waterproof Mattress Cover", price: "Rs. 1,399", description: "Bed bug-proof waterproof mattress cover.", image: "led.webp" },
+    { id: 7, name: "Closet Organizer Hanging Storage Bag", price: "Rs. 199", description: "Compact storage bag for your closet organization needs.", image: "chuchu.webp" },
+    { id: 8, name: "20PCS M3 M4 M5 Aluminum Alloy Rivets", price: "Rs. 278", description: "Durable aluminum alloy rivets for multiple purposes.", image: "flower.webp" },
+    { id: 9, name: "Portable Bluetooth Speaker", price: "Rs. 1,299", description: "Compact and portable Bluetooth speaker with clear sound.", image: "led.webp" },
+    { id: 10, name: "Wireless Optical Mouse 1600DPI", price: "Rs. 499", description: "Ergonomic wireless mouse with high sensitivity.", image: "chuchu.webp" },
+    { id: 11, name: "Smart WiFi LED Bulb RGB Color Changing", price: "Rs. 799", description: "Smart RGB WiFi-enabled bulb with remote control.", image: "flower.webp" },
+    { id: 12, name: "Fitness Tracker Smart Watch", price: "Rs. 1,999", description: "Smartwatch with fitness tracking and heart rate monitor.", image: "led.webp" },
+    { id: 13, name: "Airpro Double and Airpods Wireless", price: "Rs. 898", description: "High-quality wireless Airpods with double functionality.", image: "pa.webp" },
+    { id: 14, name: "New Airpods with Super Sound", price: "Rs. 899", description: "Airpods with super sound and high quality.", image: "ki.webp" },
+    { id: 15, name: "Hand Pulled Speedy Chopper Large Size", price: "Rs. 580", description: "Efficient large-size hand-pulled speedy chopper.", image: "za.webp" },
+    { id: 16, name: "FRAKIN Plastic Cloth Hanging Rope", price: "Rs. 199", description: "Durable plastic cloth hanging rope clothesline.", image: "pa.webp" },
+    { id: 17, name: "Branded Watch For Men and Boys", price: "Rs. 530", description: "Stylish branded watch for men and boys.", image: "ki.webp" },
+    { id: 18, name: "24Pcs Crystal Pearl Fake Nails", price: "Rs. 429", description: "DIY 24 pieces of crystal pearl fake nails with glue.", image: "za.webp" },
+    { id: 19, name: "Rosemary Leaves Organic 30 Gram", price: "Rs. 449", description: "100% organic rosemary leaves, 30 grams.", image: "pa.webp" },
+    { id: 20, name: "30w,40w,60w Soldering Iron Kit", price: "Rs. 460", description: "Soldering iron kit with paste and 0.6m lead.", image: "ki.webp" },
+    { id: 21, name: "16 Pocket Durable Clear Door Wardrobe", price: "Rs. 92", description: "Durable 16-pocket clear door foldable wardrobe.", image: "za.webp" },
+    { id: 22, name: "Lace Fake Collar Hollow Design Applique", price: "Rs. 465", description: "Lace fake collar with hollow design and applique.", image: "pa.webp" },
+    { id: 23, name: "2000 Pcs Multi-Colored Orbeez Balls", price: "Rs. 110", description: "2000 pieces of multi-colored Orbeez water balls.", image: "ki.webp" },
+    { id: 24, name: "The Vechase 6-in-1 Baby Nail Trimmer", price: "Rs. 811", description: "Portable 6-in-1 baby nail trimmer set.", image: "za.webp" }
+];
+
+    
+        // Find the product by ID
+        const product = products.find(p => p.id == productId);
+    
+        // Update the HTML with product details
+        if (product) {
+            document.querySelector('.product-name').textContent = product.name;
+            document.querySelector('.current-price').textContent = product.price;
+            document.querySelector('.product-image').src = product.image;
+            document.querySelector('.product-image').alt = product.name;
+        } else {
+            // If product not found, show an error message or redirect
+            document.querySelector('.product-name').textContent = "Product Not Found";
+            document.querySelector('.current-price').textContent = "";
+            document.querySelector('.product-description').textContent = "We're sorry, the product you're looking for does not exist.";
+        }
+    </script>
+    
+    </body>
+    </html>
