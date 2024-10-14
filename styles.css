@@ -145,8 +145,8 @@ header {
 
 .carousel-container {
 
-  margin-left: 80px; /* Adjust as needed to decrease the left margin */
-  margin-right: 60px; /* Adjust as needed to decrease the right margin */
+  margin-left: 90px; /* Adjust as needed to decrease the left margin */
+  margin-right: 90px; /* Adjust as needed to decrease the right margin */
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -165,28 +165,13 @@ header {
 }
 /* 
 
-/* Side Section */
 
-.side-section {
-  width: 35%; /* Adjust side section width */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-right: 12px;
-}
-
-.app-promotion img {
-  width: 100%;
-  height: 340px;
-} */
 
 /* categories section  */
 
 .categories-section {
- 
   padding: 30px; /* Adjusted padding to reduce space */
   text-align: center;
-  background-color: #f9f9f9;
   margin-bottom: 0; /* Ensure there's no margin below this section */
 }
 
@@ -202,8 +187,8 @@ header {
 .categories-grid {
   display: grid;
   grid-template-columns: repeat(8, 1fr); /* 8 items per row */
-  padding-left: 70px; /* Left padding */
-  padding-right: 70px; /* Right padding */
+  padding-left: 30px; /* Left padding */
+  padding-right: 30px; /* Right padding */
 }
 
 .category-item {
@@ -234,7 +219,6 @@ header {
 }
 
 /* Just for You section */
-
 .just-for-you {
   margin-left: 60px; /* Adjusts the left margin */
   margin-right: 60px; /* Adjusts the right margin */
@@ -257,25 +241,26 @@ header {
   margin: 0; /* Remove additional margins for grid */
 }
 
-.just-for-you-item  {
+.just-for-you-item {
   background-color: white; /* Keep the background color the same */
   padding: 10px; /* Padding for aesthetics */
-
   transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition */
   border-radius: 5px; /* Rounded corners for consistency */
   height: auto; /* Let height adjust based on content */
 }
 
-/* Hover effect */
 .just-for-you-item:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect from all sides */
 }
 
+/* Set specific size for the images */
 .just-for-you-item img {
-  width: 100%; /* Full width to fit the card */
-  height: auto; /* Maintain image aspect ratio */
-  object-fit: cover; /* Ensures the aspect ratio is maintained */
+  width: 150px; /* Set a specific width */
+  height: 150px; /* Set a specific height */
+  object-fit: contain; /* Ensures the entire image is visible */
+  border-radius: 5px; /* Add border-radius for a smooth look */
 }
+
 
 .just-for-you-item a {
   text-decoration: none; /* Removes underline from the link */
@@ -309,6 +294,7 @@ header {
   color: rgb(183, 181, 181); /* Color for rating stars */
   font-size: 9px; /* Font size for rating */
 }
+
 .rating {
   color: gold; /* Set text color to gold */
 }
@@ -316,6 +302,7 @@ header {
 .rating i {
   color: gold; /* Set the star icon color to gold */
 }
+
 
 /* more products section  */
 
@@ -554,9 +541,9 @@ header {
 
 
 
+/* next page styling  */
 
 .product-details {
-
   display: flex;
   justify-content: center;
   padding: 20px;
@@ -657,18 +644,142 @@ header {
 }
 
 .buy-now {
-  background-color: #3498db;
+  background-color: #43b3f1;
   color: white;
-  padding: 10px 20px;
+  padding: 15px 60px;
   border: none;
   cursor: pointer;
   margin-right: 10px;
 }
 
 .add-to-cart {
-  background-color: #f39c12;
+  background-color: #F85606; 
   color: white;
-  padding: 10px 20px;
+  padding: 15px 60px;
   border: none;
   cursor: pointer;
 }
+
+
+
+
+
+.delivery-container {
+  background-color: #fafafa;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+}
+
+h2 {
+  font-size: 8px;
+  margin-bottom: 10px;
+}
+.delivery{
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  border-bottom: #333;
+  border-bottom: 1px solid #ddd;
+  margin: 30px 0;
+}
+
+.delivery-item, .return-item {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.icon {
+  width: 20px; /* Adjust the icon size */
+  height: auto;
+  margin-right: 10px;
+}
+
+.divider {
+  border-top: 1px solid #ddd;
+  margin: 20px 0;
+}
+
+p {
+  margin: 5px 0;
+}
+
+
+
+
+
+.delivery-container {
+  padding: 20px; /* Adjust padding as needed */
+}
+
+.seller-info {
+  border: 1px solid #ccc; /* Border around seller info */
+  padding: 15px; /* Space inside the border */
+  margin-top: 20px; /* Space above seller info */
+  background-color: #f9f9f9; /* Light background */
+}
+
+.qr-code {
+  text-align: left; /* Center align QR code and text */
+}
+
+.qr-icon {
+  width: 220px; /* Adjust size of the QR code */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.app-download {
+  text-align: center; /* Center align the download message */
+  font-weight: lighter; /* Make the download message bold */
+  margin: 5px 0; /* Space above and below the message */
+}
+.seller-details {
+  font-family: Arial, sans-serif;
+  margin: 20px 0;
+}
+
+.seller-details table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 10px;
+}
+
+.seller-details td {
+  padding: 10px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.seller-details td:first-child {
+  color: #666;
+}
+
+.seller-details td:last-child {
+  font-weight: bold;
+}
+
+.seller-details a.chat-now {
+  color: #6b42f4;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.seller-details a.go-to-store {
+  display: block;
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.seller-details a.go-to-store:hover {
+  background-color: #0056b3;
+}
+
+

@@ -1,42 +1,75 @@
 document.addEventListener('DOMContentLoaded', () => {
-    let currentProducts = 0; // Start with 0 products displayed
-    const allProducts = document.querySelectorAll('.product');
+    let totalFetchedProducts = 0; // Track total displayed products
+    const productsPerPage = 12; // Number of products to load at once
+    const productGrid = document.querySelector('.just-for-you-grid');
     const loadMoreButton = document.querySelector('.load-more-button');
+    let allProducts = []; // Store all products fetched at once
 
-    function displayProducts() {
-        allProducts.forEach((product, index) => {
-            if (index < currentProducts) {
-                product.style.display = 'block'; // Show product
-            } else {
-                product.style.display = 'none'; // Hide product
-            }
-        });
+    // Function to fetch all products from the API
+    const fetchAllProducts = async () => {
+        try {
+            const res = await fetch('https://fakestoreapi.com/products');
+            allProducts = await res.json(); // Fetch all products once
 
-        // Hide the button if all products are displayed
-        if (currentProducts >= allProducts.length) {
+            console.log('Fetched all products:', allProducts);
+
+            // Initially display the first set of products
+            displayProducts();
+        } catch (error) {
+            console.error("Error fetching products:", error);
+        }
+    };
+
+    // Function to display products in the grid
+    const displayProducts = () => {
+        const productsToShow = allProducts.slice(totalFetchedProducts, totalFetchedProducts + productsPerPage);
+
+        // If no more products, hide the button
+        if (productsToShow.length === 0) {
+            console.log('No more products to load');
             loadMoreButton.style.display = 'none';
+            return;
         }
-    }
 
-    loadMoreButton.addEventListener('click', () => {
-        // If currentProducts is 0, show all products
-        if (currentProducts === 0) {
-            currentProducts = allProducts.length; // Set to total products
-        } else {
-            currentProducts += 6; // Increase the number of products to display by 6
-        }
-        displayProducts();
-        
-        // Move the newly displayed products to the bottom (optional)
-        const displayedProducts = Array.from(allProducts).slice(0, currentProducts);
-        displayedProducts.forEach(product => {
-            product.parentNode.appendChild(product); // Move product to the end of the parent
+        // Loop through the fetched products and display them
+        productsToShow.forEach(product => {
+            const productHTML = `
+                <div class="product">
+                    <img src="${product.image}" alt="${product.title}">
+                    <a href="product.html?id=${product.id}">
+                        <h3>${product.title.substring(0, 30)}...</h3>
+                    </a>
+                    <p class="price">Rs. ${product.price} <span class="discount">-${Math.floor(Math.random() * 30) + 50}%</span></p>
+                    <span class="rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        (${product.rating.count})
+                    </span>
+                </div>
+            `;
+            productGrid.innerHTML += productHTML;
         });
+
+        // Update the total number of displayed products
+        totalFetchedProducts += productsPerPage;
+    };
+
+    // Load more button click event
+    loadMoreButton.addEventListener('click', () => {
+        console.log('Load More button clicked');
+        displayProducts(); // Display the next set of products
     });
 
-    // Initial call to display the first set of products
-    displayProducts(); // This will show 0 products initially
+    // Fetch and display the first set of products
+    fetchAllProducts();
 });
+
+
+
+
+
 // Get the product ID from the URL
 const params = new URLSearchParams(window.location.search);
 const productId = params.get('id');
@@ -58,6 +91,68 @@ if (product) {
     document.querySelector('.product-description').textContent = product.description;
 }
 
+// Variables for load more functionality
+let totalFetchedProducts = 0; // Track total displayed products
+const productsPerPage = 12; // Number of products to load at once
+let allProducts = []; // Store all fetched products
+const loadMoreButton = document.querySelector('.load-more-button'); // Load more button
 
+// Function to fetch data from API and initialize product loading
+const fetchData = async () => {
+    try {
+        const res = await fetch("https://fakestoreapi.com/products");
+        const data = await res.json();
 
+        allProducts = data; // Store all fetched products
 
+        displayProducts(); // Display the first 12 products
+    } catch (error) {
+        console.error("Error fetching data:", error);
+    }
+};
+
+// Function to display the next set of products
+const displayProducts = () => {
+    const productGrid = document.querySelector(".just-for-you-grid");
+
+    // Get the next set of products to display
+    const productsToShow = allProducts.slice(totalFetchedProducts, totalFetchedProducts + productsPerPage);
+
+    // Append the products to the grid
+    productsToShow.forEach(product => {
+        const productHTML = `
+            <div class="just-for-you-item">
+                <img src="${product.image}" alt="${product.title}">
+                <a href="product.html?id=${product.id}">
+                    <p>${product.title.substring(0, 30)}...</p>
+                </a>
+                <span class="price">Rs.${product.price}</span>
+                <span class="discount">-${Math.floor(Math.random() * 30) + 50}%</span>
+                <span class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    (${product.rating.count})
+                </span>
+            </div>
+        `;
+        productGrid.innerHTML += productHTML;
+    });
+
+    // Update the total number of displayed products
+    totalFetchedProducts += productsPerPage;
+
+    // Hide the button if all products are displayed
+    if (totalFetchedProducts >= allProducts.length) {
+        loadMoreButton.style.display = 'none'; // Hide the button when all products are loaded
+    }
+};
+
+// Load more button click event
+loadMoreButton.addEventListener('click', () => {
+    displayProducts(); // Display the next set of products when the button is clicked
+});
+
+// Fetch data and display the first set of products when the page loads
+fetchData();
