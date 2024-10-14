@@ -46,7 +46,8 @@
             <div class="product-info">
                 <h1 class="product-name">Women Classic Rectangle Retro Square Leopard Print Sunglasses</h1>
                 <div class="product-ratings">
-                    <span class="stars">★★★★★</span> (456 Ratings) | 33 Answered Questions
+                    <span class="stars">★★★★★</span> <p class="ratting details ">(456 Ratings) | 33 Answered Questions</p> 
+                    
                 </div>
                 <div class="brand-info">
                     <span class="brand-name">Brand: No Brand</span><br>
@@ -55,16 +56,26 @@
                 <div class="price-section">
                     <span class="current-price">Rs. 167</span>
                     <span class="original-price">Rs. 545</span>
-                    <span class="discount">-69%</span>
+                    <span class="discount">-89%</span>
                 </div>
-                <div class="promotion">
-                    <span>Check Out the 10.10 Deals! Shop Now!</span>
+                <div class="promotion-section">
+                    <span class="promotion-label">Promotions</span>
+                    <div class="promotion-tag">
+                        Min.Spend Rs. 2,500
+                        <span class="dropdown-icon">▼</span>
+                    </div>
                 </div>
+                
 
                 <div class="quantity-selection">
-                    <label for="quantity">Quantity:</label>
-                    <input type="number" id="quantity" name="quantity" min="1" value="1">
+                    <label for="quantity">Quantity</label>
+                    <div class="quantity-buttons">
+                        <button type="button" class="decrement">-</button>
+                        <input type="text" id="quantity" name="quantity" value="1" readonly>
+                        <button type="button" class="increment">+</button>
+                    </div>
                 </div>
+                
                 <div class="actions">
                     <button class="buy-now">Buy Now</button>
                     <button class="add-to-cart">Add to Cart</button>
@@ -131,7 +142,7 @@
 const params = new URLSearchParams(window.location.search);
 const productId = params.get('id');
 
-// Function to fetch product details by ID from the API
+
 // Function to fetch product details by ID from the API
 const fetchProductDetails = async () => {
     try {
@@ -173,7 +184,19 @@ const fetchProductDetails = async () => {
 
 // Fetch the product details on page load
 fetchProductDetails();
+document.querySelector('.increment').addEventListener('click', function () {
+    let quantityInput = document.querySelector('#quantity');
+    let currentValue = parseInt(quantityInput.value);
+    quantityInput.value = currentValue + 1;
+});
 
+document.querySelector('.decrement').addEventListener('click', function () {
+    let quantityInput = document.querySelector('#quantity');
+    let currentValue = parseInt(quantityInput.value);
+    if (currentValue > 1) {
+        quantityInput.value = currentValue - 1;
+    }
+});
 
     </script>
 </body>
