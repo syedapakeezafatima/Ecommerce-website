@@ -816,12 +816,64 @@ p {
   font-weight: bold;
 }
 
+.qr-and-app-container {
+  display: flex;
+  align-items: center; /* Align QR code and app container in the center vertically */
+  gap: 10px; /* Add space between the QR code and the app container */
+}
+
+.qr-code {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the QR code and text */
+}
+
 .qr-img {
-  width: 200px;
+  width: 190px;
   height: 110px;
   display: block;
+  margin-bottom: 5px;
+}
+
+.download-app-container {
+  display: flex;
+  flex-direction: column; /* Stack logo and text vertically */
+  align-items: center;
+  background-color: #fff;
+  padding: 10px;
+  margin-bottom: 50px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  width: 150px;
+}
+
+.download-app-container::before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid #fff;
+}
+
+.app-icon img {
+  width: 60px;
+  height: 40px;
   margin-bottom: 10px;
 }
+
+.app-description p {
+  color: #999;
+  font-size: 14px;
+  margin: 0;
+  text-align: center;
+}
+
 
 .download-app {
   display: flex;
@@ -897,7 +949,7 @@ body {
   margin-bottom: 5px;
 }
 .divde{
-  border-right: 2px solid #e0e0e0;
+  border-right: 1px solid #e0e0e0;
   margin: 10px 0;
 
 }
