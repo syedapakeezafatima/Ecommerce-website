@@ -35,33 +35,32 @@
         </div>
     </header>
 
+
+    
     <div class="product-details">
         <div class="product-container">
             <div class="product-images">
                 <img src="your-product-image.jpg" alt="Product Image" class="product-image">
+
             </div>
             <div class="product-info">
-                <h1 class="product-name">Product Name</h1>
+                <h1 class="product-name">Women Classic Rectangle Retro Square Leopard Print Sunglasses</h1>
                 <div class="product-ratings">
-                    <span class="stars">★★★★☆</span> (2 Ratings)
+                    <span class="stars">★★★★★</span> (456 Ratings) | 33 Answered Questions
                 </div>
                 <div class="brand-info">
                     <span class="brand-name">Brand: No Brand</span><br>
                     <span class="other-info">Every product we offer undergoes rigorous quality control to guarantee performance and longevity.</span>
                 </div>
                 <div class="price-section">
-                    <span class="current-price">Rs. 0</span>
-                    <span class="original-price">Rs. 0</span>
-                    <span class="discount">(0%)</span>
+                    <span class="current-price">Rs. 167</span>
+                    <span class="original-price">Rs. 545</span>
+                    <span class="discount">-69%</span>
                 </div>
                 <div class="promotion">
-                    <span>Check Out the 10.10 Deals!</span>
+                    <span>Check Out the 10.10 Deals! Shop Now!</span>
                 </div>
-    
-                <div class="main-stone-selection">
-                    <label for="main-stone-color">Main Stone Color:</label>
-                    <span>16G-1.2mm-0.05in</span>
-                </div>
+
                 <div class="quantity-selection">
                     <label for="quantity">Quantity:</label>
                     <input type="number" id="quantity" name="quantity" min="1" value="1">
@@ -72,9 +71,58 @@
                 </div>
             </div>
         </div>
+        <div>
+            <div class="product-info">
+                <div class="delivery-options">
+                  <h3>Delivery Options</h3>
+                  <p><img src="location.png" alt="location icon" class="icon"> Sindh, Karachi <br> Gulshan-e-Iqbal, Block 15 <a href="#" class="change">CHANGE</a></p>
+                  <div class="divider"></div>
+
+                  <p><img src="COD.png" alt="delivery icon" class="icon"> Standard Delivery <span>Rs. 135</span></p><br>
+                  <!-- <p>Guaranteed by 17-22 Oct</p> -->
+                  <p><img src="money.png" alt="cash icon" class="icon"> Cash on Delivery Available</p>
+                </div>
+                <div class="divider"></div>
+
+                <div class="return-warranty">
+                  <h3>Return & Warranty</h3>
+                  <p><img src="reverse.png" alt="return icon" class="icon"> 14 days easy return</p>
+                  <p><img src="shield.png" alt="warranty icon" class="icon"> Warranty not available</p>
+                </div>
+            
+                <div class="qr-code">
+                  <img src="qr.png" alt="QR code" class="qr-img">
+                  <div class="download-app">
+                    <img src="mobile.png" alt="app icon" class="app-icon">
+                    <p>Download app to enjoy exclusive discounts!</p>
+                  </div>
+                </div>
+                <div class="store-info">
+                    <p class="sold-by">Sold by <strong>Avenue - Mall</strong> <a href="#" class="chat-now">Chat Now</a></p>
+                    <div class="divider"></div>
+                    <div class="seller-stats">
+                      <div class="stat">
+                        <p class="stat-title">Positive Seller Ratings</p>
+                        <p class="stat-value">83%</p>
+                      </div>
+                      <div class="divde"></div>
+                      <div class="stat">
+                        <p class="stat-title">Ship on Time</p>
+                        <p class="stat-value">100%</p>
+                      </div>
+                      <div class="divde"></div>
+                      <div class="stat">
+                        <p class="stat-title">Chat Response Rate</p>
+                        <p class="stat-value no-data">Not enough data</p>
+                      </div>
+                    </div>
+                    <div class="divider"></div>
+                    <a href="#" class="go-to-store">GO TO STORE</a>
+                  </div>
+                
+        </div>
+       
     </div>
-
-
 
     
     <script>
@@ -84,6 +132,7 @@ const params = new URLSearchParams(window.location.search);
 const productId = params.get('id');
 
 // Function to fetch product details by ID from the API
+// Function to fetch product details by ID from the API
 const fetchProductDetails = async () => {
     try {
         const res = await fetch(`https://fakestoreapi.com/products/${productId}`);
@@ -92,8 +141,8 @@ const fetchProductDetails = async () => {
         if (product) {
             document.querySelector('.product-name').textContent = product.title;
             document.querySelector('.current-price').textContent = `Rs. ${product.price}`;
-            document.querySelector('.original-price').textContent = `Rs. ${product.originalPrice}`;
-            document.querySelector('.discount').textContent = `${product.discount}`;
+            document.querySelector('.original-price').textContent = `Rs. ${product.originalPrice || "Price not available"}`; // Use a default message if original price is unavailable
+            document.querySelector('.discount').textContent = product.discount || "-%"; // Default discount if not available
 
             // Log the image URL for debugging
             console.log("Product Image URL:", product.image);
@@ -119,6 +168,8 @@ const fetchProductDetails = async () => {
         console.error("Error fetching product details:", error);
     }
 };
+
+
 
 // Fetch the product details on page load
 fetchProductDetails();
