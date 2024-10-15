@@ -588,14 +588,14 @@ row-gap: 90px;
 .product-details {
   display: flex;
   justify-content: center;
-  padding: 20px;
+  padding: 9px ;
 }
 
 .product-container {
   background-color: white;
   display: flex;
   gap: 10px;
-  max-width: 800px;
+  max-width: 1000px;
 }
 
 .product-images {
@@ -603,14 +603,16 @@ row-gap: 90px;
 }
 
 .product-image {
-  max-width: 100%; /* Ensures the image fits within the container */
-  height: auto; /* Maintains aspect ratio */
-  margin-bottom: 30px; /* Adds some space between the image and other content */
+  max-width: 100%; 
+  height: auto; 
+  margin-top: 65px;
+   
 }
 
 
 .product-info {
   flex: 2;
+  padding-left: 30px;
 }
 
 .product-name {
@@ -637,18 +639,20 @@ row-gap: 90px;
 
 .rating-details {
   color: purple;
-  margin-right: 290px; /* Increase space between the ratings text and the icons */
+  margin-right: 400px; /* Increase space between the ratings text and the icons */
 }
 
 .rating-icons {
   display: flex;
   align-items: center;
+ 
 }
 
 .icon {
+ 
   width: 25px;  /* Increase width */
   height: 25px; /* Increase height */
-  margin-left: 5px; /* Adjust space between the icons */
+  margin-left: 2px; /* Adjust space between the icons */
 }
 
 
@@ -790,7 +794,7 @@ row-gap: 90px;
   margin-top: 60px;
   background-color: #2abbe8;
   color: white;
-  padding: 15px 80px;
+  padding: 15px 90px;
   border: none;
   cursor: pointer;
   margin-right: 10px;
@@ -804,7 +808,7 @@ row-gap: 90px;
 .add-to-cart {
   background-color: #F85606;
   color: white;
-  padding: 15px 80px;
+  padding: 15px 90px;
   border: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -817,11 +821,13 @@ row-gap: 90px;
 
 
 
-.product-info {
-  background-color: white;
+
+
+.product-info2 {
+  background-color:  #F5F5F5;
 
   padding: 20px;
-  width: 340px; /* Adjusted to match image */
+  width: 310px; 
   margin: 0 auto;
 }
 
@@ -846,6 +852,16 @@ p {
 .delivery-options, .return-warranty, .qr-code, .store-info {
   margin-bottom: 30px;
 }
+.chat-now {
+    color: #007bff; /* Change to your desired color */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.chat-now:hover {
+    text-decoration: underline; /* Add hover effect */
+}
+
 
 .return-warranty h3{
   font-weight: lighter;
@@ -871,6 +887,7 @@ p {
   margin-left: auto;
   font-weight: bold;
 }
+
 .qr-and-app-container {
   display: flex;
   align-items: center;
@@ -884,14 +901,14 @@ p {
 }
 
 .qr-img {
-  width: 120px;
-  height: 120px;
+  width: 110px;
+  height: 100px;
   display: block;
   margin-bottom: 5px;
 }
 
 .qr-code p {
-  font-size: 12px;
+  font-size: 13px;
   color: #333;
   margin: 0;
 }
@@ -910,7 +927,7 @@ p {
   border-radius: 9px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: relative;
-  width: 150px;
+  width: 120px;
   height: 100px;
   margin-bottom: 40px;
 }
@@ -930,7 +947,7 @@ p {
 .app-icon img {
   width: 80px;
   height: 50px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .app-description p {
@@ -938,7 +955,7 @@ p {
   font-size: 12px;
   margin: 0;
   text-align: left;
-  line-height: 1.3;
+  line-height: 1.2;
 }
 
 
@@ -1019,7 +1036,7 @@ p {
   color: #43b3f1;
   text-align: center;
   padding: 10px;
-  text-decoration: none;
+  text-decoration: none;  
   margin-top: 20px;
   font-size: 16px;
 }
