@@ -3,8 +3,8 @@ body {
     Sans-serif;
   margin: 0;
   background-color: #f4f4f4; /* Adjust as needed */
-
 }
+
 header {
   display: flex;
   flex-direction: column;
@@ -137,40 +137,76 @@ header {
   height: 30px;
 }
 
-.main{
-  margin-left: 195px;
-  margin-right: 195px;
+.poki{
+  margin-left: 280px;
+  margin-right: 280px;
 }
 /* Carousel container */
-
 .carousel-container {
 
-  margin-left: 90px; /* Adjust as needed to decrease the left margin */
-  margin-right: 90px; /* Adjust as needed to decrease the right margin */
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  justify-content: center; /* Center the carousel */
+  align-items: center;
+  position: relative; /* For positioning arrows */
+  width: 100%;
 }
 
 /* Main Carousel */
 .main-carousel {
-  
-  width: 165%; /* Keeps the carousel full width */
+  width: 100%;
+  position: relative; /* Ensure the carousel is positioned relative to the container */
 }
 
 .carousel-cell img {
   width: 100%;
   object-fit: cover;
- 
 }
-/* 
+
+/* Style for left and right navigation arrows */
+.flickity-prev-next-button {
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  border: none;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%); /* Center vertically */
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%; /* Make buttons round */
+}
+
+/* Left arrow */
+.flickity-prev-next-button.previous {
+  left: 10px; /* Position the left arrow on the image */
+}
+
+/* Right arrow */
+.flickity-prev-next-button.next {
+  right: 10px; /* Position the right arrow on the image */
+}
+
+/* Change arrow icons */
+.flickity-prev-next-button svg {
+  fill: white; /* Arrow color */
+  width: 20px;
+  height: 20px;
+}
+
+/* Hide the default disabled arrow styling */
+.flickity-prev-next-button.disabled {
+  display: none;
+}
+
 
 
 
 /* categories section  */
 
 .categories-section {
-  padding: 30px; /* Adjusted padding to reduce space */
   text-align: center;
   margin-bottom: 0; /* Ensure there's no margin below this section */
 }
@@ -187,8 +223,7 @@ header {
 .categories-grid {
   display: grid;
   grid-template-columns: repeat(8, 1fr); /* 8 items per row */
-  padding-left: 30px; /* Left padding */
-  padding-right: 30px; /* Right padding */
+
 }
 
 .category-item {
@@ -220,14 +255,12 @@ header {
 
 /* Just for You section */
 .just-for-you {
-  margin-left: 60px; /* Adjusts the left margin */
-  margin-right: 60px; /* Adjusts the right margin */
+  
   padding: 10px 0; /* Reduced padding for consistency */
 }
 
 .just-for-you h2 {
   text-align: left;
-  margin-left: 5px;
   font-size: 24px; /* Keep the font size the same */
   margin-bottom: 10px; /* Space below the heading */
   font-weight: lighter; /* Keep the font weight the same */
@@ -328,8 +361,7 @@ header {
   display: grid;
   grid-template-columns: repeat(6, 1fr); /* 6 items per row */
   gap: 10px; /* Space between items */
-  margin-left: 60px; /* Adjusts the left margin */
-  margin-right: 60px; /* Adjusts the right margin */
+
 }
 
 .product {
@@ -436,8 +468,7 @@ header {
 }
 
 .footer-container {
-  margin-left: 40px; /* Adjusts the left margin */
-  margin-right: 40px; /* Adjusts the right margin */
+row-gap: 90px;
   display: flex;
   justify-content: space-between; /* Space between footer sections */
   align-items: flex-start;
@@ -478,6 +509,7 @@ header {
 }
 /* App Download Section */
 .app-download {
+  margin-left: 20px;
   display: flex;
   align-items: center;
   padding: 9px;
@@ -890,11 +922,7 @@ p {
   font-size: 12px;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
-  margin: 20px;
-}
+
 
 .store-info {
   text-align: left;
