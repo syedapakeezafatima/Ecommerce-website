@@ -565,7 +565,9 @@ row-gap: 90px;
 
 
 
-
+@media (max-width: 480px) {
+  
+}
 
  
 

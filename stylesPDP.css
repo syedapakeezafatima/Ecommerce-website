@@ -171,6 +171,7 @@ body {
     display: flex;
     justify-content: center;
     padding: 9px ;
+    height: 675px;
   }
   
   .product-container {
@@ -420,7 +421,8 @@ body {
   
   .product-info2 {
     background-color:  #F5F5F5;
-  
+    height: 636px;
+
     padding: 20px;
     width: 310px; 
     margin: 0 auto;
@@ -635,3 +637,6 @@ body {
 .go-to-store:hover {
     text-decoration: underline;
 }
+
+
+
