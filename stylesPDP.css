@@ -1,0 +1,623 @@
+
+body {
+    font-family: Roboto-Regular, Helvetica Neue, Helvetica, Tahoma, Arial,
+      Sans-serif;
+    margin: 0;
+    background-color: #f4f4f4; /* Adjust as needed */
+  }
+  
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F85606; 
+    padding: 0px 2px; /* Reduce padding to lower height */
+    height: 117px;
+    position: sticky; /* Make the header sticky */
+  }
+  
+  
+  .header-content {
+    font-size: 12px;
+    line-height: 12px;
+    text-align: right;
+    word-spacing: 0px;
+   display: block;
+  
+  }
+  
+  
+  
+  .navbar {
+    display: flex;
+    margin-left: 549px;
+    
+  }
+  
+  .navbar a {
+    line-height: 22px;
+    text-align: left;
+    white-space: nowrap;
+    word-spacing: 0px;
+    margin-top: 1px;
+    color: rgb(238, 237, 237);
+    text-decoration: none;
+    font-size: 12px;
+   margin-right: 24px;
+   font-weight: lighter;
+  }
+  
+  /* Hover effect */
+  .navbar a:hover {
+    color: rgb(246, 231, 205); /* Change text color to orange */
+  }
+  
+  /* Container for search bar and cart */
+  .search-container {
+    margin-right: 220px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the items horizontally */
+    background-color: #F85606; /* Matching the orange background */
+    padding: 5px 15px 10px 15px;
+  }
+  .logo {
+    display: flex;
+    margin-right: 99px;
+    align-items: last baseline;
+  }
+  
+  .logo-img {
+    height: 42px; /* Adjust height to fit as needed */
+   
+  }
+  
+  
+  /* Search bar styling */
+  .search-bar {
+    border-radius: 2px 0 0 2px; /* Border-radius for rounded corners */
+    width: 645px; /* Adjust the width as necessary */
+    padding: 11px; /* Padding inside the search bar */
+    border: none; /* No border for cleaner look */
+    font-size: 19px;
+    outline: none;
+    margin-right: -8px; /* Adjusted to reduce the gap between the search bar and button */
+  }
+  
+  .search-bar::placeholder {
+    color: #b4b1b1; /* Placeholder color */
+    font-size: 14px;
+    text-align: left;
+    letter-spacing: 0px;
+    opacity: 1; /* Fully opaque placeholder */
+  }
+  
+  .search-button {
+    background-color: #fad8c3; /* Light peach background color */
+    border: none;
+    padding: 10px;
+    width: 44px; /* Adjusted for perfect fit */
+    height: 44px; /* Adjusted height */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center the search icon */
+    border-radius: 0 2px 2px 0; /* Rounded corners on the right side */
+    cursor: pointer; /* Pointer cursor for the button */
+  }
+  
+  .search-button .search-icon {
+    width: 22px;
+    height: 22px;
+    filter: brightness(0) saturate(100%) invert(57%) sepia(80%) saturate(2000%) hue-rotate(-20deg); /* Icon color filter */
+  }
+  
+  
+  /* On hover */
+  .search-button:hover .search-icon {
+    filter: brightness(0) saturate(100%) invert(45%) sepia(100%) saturate(3000%) hue-rotate(0deg);
+  }
+  
+  
+  
+   
+  
+  /* Cart icon styling */
+  .cart-icon {
+    margin-left: 18px; /* Adjust the margin for a balanced gap */
+    margin-top: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Cart icon SVG styling */
+  .cart-icon svg {
+    fill: white; /* White cart icon */
+    width: 30px;
+    height: 30px;
+  }
+  
+  .search-suggestions {
+    display: flex;
+    justify-content: flex-start; /* Align to the left */
+    font-size: 14px;
+    gap: 10px; /* Adjust spacing between suggestions */
+    margin-top: 0; /* Remove top gap */
+    margin-right: 320px;
+}
+
+.search-suggestions a {
+    text-decoration: none;
+    color: white; /* White color for consistency */
+    font-weight: normal;
+}
+
+.search-suggestions a:hover {
+    color: #fad8c3; /* Hover effect similar to navbar */
+}
+
+
+
+
+
+/* next page styling  */
+
+
+.product-details {
+    display: flex;
+    justify-content: center;
+    padding: 9px ;
+  }
+  
+  .product-container {
+    background-color: white;
+    display: flex;
+    gap: 10px;
+    max-width: 850px;
+  }
+  
+  .product-images {
+    flex: 1;
+  }
+  
+  .product-image {
+    max-width: 100%; 
+    height: auto; 
+    margin-top: 65px;
+     
+  }
+  
+  
+  .product-info {
+    flex: 2;
+    padding-left: 30px;
+  }
+  
+  .product-name {
+    font-size: 26px;
+    margin-bottom: 10px;
+    font-weight: lighter;
+  }
+  .ratting.details {
+    color: blue;
+  }
+  .brand-name{
+    color: blue;
+  }
+  .product-ratings {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+  }
+  
+  .stars {
+    color: gold;
+    margin-right: 5px; /* Adjust space between stars and ratings text */
+  }
+  
+  .rating-details {
+    color: purple;
+    margin-right: 400px; /* Increase space between the ratings text and the icons */
+  }
+  
+  .rating-icons {
+    display: flex;
+    align-items: center;
+   
+  }
+  
+  .icon {
+   
+    width: 25px;  /* Increase width */
+    height: 25px; /* Increase height */
+    margin-left: 2px; /* Adjust space between the icons */
+  }
+  
+  
+  .brand-info {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  .promotion-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .promotion-label {
+    font-size: 14px;
+    color: #999; /* Gray color for label */
+    margin-right: 10px;
+  }
+  
+  .promotion-tag {
+    background-color: #f85606; /* Orange background */
+    color: white;
+    font-size: 10px;
+    padding: 5px 8px;
+    border-radius: 1px;
+    display: inline-block;
+    position: relative;
+    font-weight: lighter;
+  }
+  
+  .promotion-tag::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -10px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid #f85606; /* Triangle matching tag background */
+    border-top: 10px solid transparent;
+    border-bottom: 15px solid transparent;
+  }
+  
+  .dropdown-icon {
+    margin-left: 5px;
+    font-size: 12px;
+  }
+  .price-section {
+    margin-top: 35px;
+    font-size: 34px;
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 25px;
+  }
+  
+  .current-price {
+    color: #f85606; /* Orange color */
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .original-price {
+    color: #999;
+    text-decoration: line-through;
+    font-size: 16px;
+    margin-right: 10px;
+  }
+  
+  .discount {
+    color: #333;
+    font-size: 18px;
+  }
+  
+  
+  .promotion {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #f39c12;
+  }
+  
+  .color-box {
+    background-color: grey;
+    padding: 5px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-left: 10px;
+  }
+  
+  .quantity-selection {
+    display: flex;
+    align-items: center;
+    margin-top: 25px;
+  }
+  
+  .quantity-selection label {
+    margin-right: 10px;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .quantity-buttons {
+    display: flex;
+    align-items: center;
+  }
+  
+  .quantity-buttons button {
+    width: 30px;
+    height: 30px;
+   
+    border: 1px solid #ccc;
+    color: #666;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .quantity-buttons button:hover {
+    background-color: #ddd;
+  }
+  
+  .quantity-buttons input {
+    width: 40px;
+    height: 25px;
+    text-align: center;
+    border: 1px solid #ccc;
+    
+    color: #333;
+    font-size: 14px;
+    margin: 0 5px;
+    outline: none;
+  }
+  
+  
+  .buy-now {
+    margin-top: 60px;
+    background-color: #2abbe8;
+    color: white;
+    padding: 15px 90px;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .buy-now:hover {
+    background-color: #1f8dc6; /* Darker shade on hover */
+  }
+  
+  .add-to-cart {
+    background-color: #F85606;
+    color: white;
+    padding: 15px 90px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .add-to-cart:hover {
+    background-color: #d74404; /* Darker shade on hover */
+  }
+  
+  
+  
+  
+  
+  
+  .product-info2 {
+    background-color:  #F5F5F5;
+  
+    padding: 20px;
+    width: 310px; 
+    margin: 0 auto;
+  }
+  
+  h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  p {
+    font-size: 12px;
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  .icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+  }
+  
+  .delivery-options, .return-warranty, .qr-code, .store-info {
+    margin-bottom: 30px;
+  }
+  .chat-now {
+      color: #007bff; /* Change to your desired color */
+      text-decoration: none;
+      font-weight: bold;
+  }
+  
+  .chat-now:hover {
+      text-decoration: underline; /* Add hover effect */
+  }
+  
+  
+  .return-warranty h3{
+    font-weight: lighter;
+  }
+  .change {
+    color: #43b3f1;
+    font-weight: bold;
+    text-decoration: none;
+    margin-left: auto; /* Pushes to the right in a flexbox container */
+  }
+  
+  .parent-container {
+    display: flex;
+    align-items: center; /* If needed, to center vertically */
+  }
+  
+  
+  .change:hover {
+    text-decoration: underline;
+  }
+  
+  .delivery-options p span {
+    margin-left: auto;
+    font-weight: bold;
+  }
+  
+  .qr-and-app-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Add space between the QR code and the app container */
+  }
+  
+  .qr-code {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the QR code and text */
+  }
+  
+  .qr-img {
+    width: 110px;
+    height: 100px;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .qr-code p {
+    font-size: 13px;
+    color: #333;
+    margin: 0;
+  }
+  
+  .qr-code .icon {
+    width: 19px;
+    height: 12px;
+    margin-right: 5px;
+  }
+  
+  .download-app-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 9px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    width: 120px;
+    height: 100px;
+    margin-bottom: 40px;
+  }
+  
+  .download-app-container::before {
+    content: "";
+    position: absolute;
+    left: -9px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+  }
+  
+  .app-icon img {
+    width: 80px;
+    height: 50px;
+    margin-bottom: 5px;
+  }
+  
+  .app-description p {
+    color: #969393;
+    font-size: 12px;
+    margin: 0;
+    text-align: left;
+    line-height: 1.2;
+  }
+  
+  
+  .store-info {
+    text-align: left;
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    width: 275px; /* Matching the width from the image */
+    margin: 0 auto;
+  }
+  
+  .sold-by {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  .chat-now {
+    color: #43b3f1;
+    font-size: 12px;
+    font-weight: lighter;
+    text-decoration: none;
+    margin-left: auto; /* Pushes the element to the right */
+  }
+  
+  /* Apply flexbox to the parent container */
+  .parent-container {
+    display: flex;
+    align-items: center; /* If you need vertical centering */
+  }
+  
+  
+  .chat-now:hover {
+    text-decoration: underline;
+  }
+  
+  .divider {
+    border-bottom: 2px solid #e0e0e0;
+    margin: 10px 0;
+  }
+  
+  .seller-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .stat {
+    text-align: left;
+  }
+  
+  .stat-title {
+    font-size: 10px;
+    color: #999;
+    margin-bottom: 5px;
+  }
+  .divde{
+    border-right: 1px solid #e0e0e0;
+   margin-right: 20px;
+  
+  }
+  .stat-value {
+    text-align: left;
+    margin-top: 17px;
+    font-size: 23px;
+    font-weight: lighter;
+    color: #333;
+  }
+  
+  .no-data {
+    color: #ccc;
+    font-size: 10px;
+  }
+  
+  .go-to-store {
+    display: block;
+    font-weight: bold;
+    color: #43b3f1;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;  
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  
+  
+  
