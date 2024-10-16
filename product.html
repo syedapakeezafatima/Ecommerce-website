@@ -34,10 +34,10 @@
             </a>
         </div>
         <div class="search-suggestions">
-            <a href="#">bags for girls</a> |
-            <a href="#">water bottle</a> |
-            <a href="#">smart watch</a> |
-            <a href="#">makeup</a> |
+            <a href="#">bags for girls</a> <span class="separator">|</span>
+            <a href="#">water bottle</a> <span class="separator">|</span>
+            <a href="#">smart watch</a> <span class="separator">|</span>
+            <a href="#">makeup</a> <span class="separator">|</span>
             <a href="#">laptop</a>
         </div>
     </header>
@@ -57,6 +57,7 @@
                         <img src="share.png" alt="Share Icon" class="icon">
                         <img src="heart.png" alt="Heart Icon" class="icon">
                     </span>
+                    
                 </div>
                 
                 <div class="brand-info">
@@ -64,10 +65,14 @@
                     <span class="other-info">Every product we offer undergoes rigorous quality control to guarantee performance and longevity.</span>
                 </div>
                 <div class="price-section">
-                    <span class="current-price">Rs. 167</span>
-                    <span class="original-price">Rs. 545</span>
-                    <span class="discount">-89%</span>
+                    <div class="current-price">Rs. 277</div>
+                    <div class="previous-price">
+                        <span class="original-price">Rs. 600</span>
+                        <span class="discount">-54%</span>
+                    </div>
                 </div>
+                
+                
                 <div class="promotion-section">
                     <span class="promotion-label">Promotions</span>
                     <div class="promotion-tag">
@@ -95,7 +100,7 @@
                 <div class="product-info2">
                     <div class="delivery-options">
                         <h3>Delivery Options</h3>
-                        <p><img src="location.png" alt="location icon" class="icon"> Sindh, Karachi <br> Gulshan-e-Iqbal, Block 15 <a href="#" class="change">CHANGE</a></p>
+                        <p><img src="location.png" alt="location icon" class="icon"> Sindh, Karachi  Gulshan-e-Iqbal,<br> Block 15 <a href="#" class="change">CHANGE</a></p>
                         <div class="divider"></div>
                         <p><img src="COD.png" alt="delivery icon" class="icon"> Standard Delivery <span>Rs. 135</span></p><br>
                         <p><img src="money.png" alt="cash icon" class="icon"> Cash on Delivery Available</p>
@@ -106,11 +111,10 @@
                         <p><img src="reverse.png" alt="return icon" class="icon"> 14 days easy return</p>
                         <p><img src="shield.png" alt="warranty icon" class="icon"> Warranty not available</p>
                     </div>
-                    
                     <div class="qr-and-app-container">
                         <div class="qr-code">
                             <img src="qr.png" alt="QR code" class="qr-img">
-                            <p><img src="mobile.png" alt="mobile icon" class="icon"> Scan with mobile </p>
+                            <p><img src="mobile.png" alt="mobile icon" class="icon"> Scan with mobile</p>
                         </div>
                         <div class="download-app-container">
                             <div class="app-icon">
@@ -121,9 +125,14 @@
                             </div>
                         </div>
                     </div>
+                    
+                    
+                    
                     <div class="store-info">
                         <p class="sold-by">
-                            Sold by <strong><br>Avenue - Mall</strong>
+                            Sold by <br>
+                             Tajdar
+                            
                             <a href="#" class="chat-now">
                                 <img src="chat.png" alt="Chat Icon" style="width: 16px; height: 16px; vertical-align: middle;"/> Chat Now
                             </a>
@@ -137,7 +146,7 @@
                             </div>
                             <div class="divde"></div>
                             <div class="stat">
-                                <p class="stat-title">Ship on Time</p>
+                                <p class="stat-title">Ship on Time delivery</p>
                                 <p class="stat-value">100%</p>
                             </div>
                             <div class="divde"></div>
@@ -170,8 +179,7 @@ const fetchProductDetails = async () => {
         if (product) {
             document.querySelector('.product-name').textContent = product.title;
             document.querySelector('.current-price').textContent = `Rs. ${product.price}`;
-            document.querySelector('.original-price').textContent = `Rs. ${product.originalPrice || "Price not available"}`; // Use a default message if original price is unavailable
-            document.querySelector('.discount').textContent = product.discount || "-%"; // Default discount if not available
+            
 
             // Log the image URL for debugging
             console.log("Product Image URL:", product.image);

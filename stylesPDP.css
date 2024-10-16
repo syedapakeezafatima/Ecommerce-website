@@ -149,7 +149,7 @@ body {
 
 .search-suggestions a {
     text-decoration: none;
-    color: white; /* White color for consistency */
+    color: rgb(255, 255, 255); /* White color for consistency */
     font-weight: normal;
 }
 
@@ -158,6 +158,9 @@ body {
 }
 
 
+.separator {
+    color: white; /* Make the separator white */
+}
 
 
 
@@ -173,12 +176,13 @@ body {
   .product-container {
     background-color: white;
     display: flex;
-    gap: 10px;
-    max-width: 850px;
+    gap: 5px;
+    max-width: 900px;
   }
   
   .product-images {
     flex: 1;
+    margin-left: 30px;
   }
   
   .product-image {
@@ -195,20 +199,22 @@ body {
   }
   
   .product-name {
+ 
     font-size: 26px;
     margin-bottom: 10px;
     font-weight: lighter;
   }
-  .ratting.details {
-    color: blue;
-  }
+  
   .brand-name{
     color: blue;
   }
+
   .product-ratings {
+    margin-top: 30px;
     display: flex;
     align-items: center;
-    font-size: 14px;
+    font-size: 17px;
+    margin-bottom: 30px;
   }
   
   .stars {
@@ -217,29 +223,30 @@ body {
   }
   
   .rating-details {
-    color: purple;
-    margin-right: 400px; /* Increase space between the ratings text and the icons */
+    color: blue;
+    margin-right: 200px; /* Increase space between the ratings text and the icons */
   }
-  
   .rating-icons {
     display: flex;
-    align-items: center;
-   
-  }
-  
-  .icon {
-   
-    width: 25px;  /* Increase width */
-    height: 25px; /* Increase height */
-    margin-left: 2px; /* Adjust space between the icons */
-  }
-  
+    margin-left: 150px;
+    
+}
+
+.icon {
+    width: 40px;  /* Increased width */
+    height: 40px; /* Increased height */
+    cursor: pointer; /* Add pointer cursor for better UX */
+}
+
   
   .brand-info {
     margin-top: 10px;
     font-size: 14px;
   }
+
+
   .promotion-section {
+    margin-top: 50px;
     display: flex;
     align-items: center;
     margin-bottom: 10px;
@@ -278,31 +285,8 @@ body {
     margin-left: 5px;
     font-size: 12px;
   }
-  .price-section {
-    margin-top: 35px;
-    font-size: 34px;
-    display: flex;
-    align-items: baseline;
-    margin-bottom: 25px;
-  }
   
-  .current-price {
-    color: #f85606; /* Orange color */
-    font-weight: bold;
-    margin-right: 10px;
-  }
   
-  .original-price {
-    color: #999;
-    text-decoration: line-through;
-    font-size: 16px;
-    margin-right: 10px;
-  }
-  
-  .discount {
-    color: #333;
-    font-size: 18px;
-  }
   
   
   .promotion {
@@ -318,6 +302,38 @@ body {
     display: inline-block;
     margin-left: 10px;
   }
+
+  .price-section {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align items to the left */
+    margin-top: 30px;
+}
+
+.current-price {
+    color: #f85606; /* Orange color */
+    font-weight: bold;
+    font-size: 30px; /* Adjust font size */
+    margin-bottom: 3px; /* Add spacing between rows */
+}
+
+.previous-price {
+    display: flex;
+    align-items: baseline; /* Align elements properly */
+    gap: 5px; /* Add space between the original price and discount */
+}
+
+.original-price {
+    color: #999;
+    text-decoration: line-through;
+    font-size: 15px; /* Adjust size */
+}
+
+.discount {
+    color: #999;
+    font-size: 15px; /* Ensure consistent size */
+}
+
   
   .quantity-selection {
     display: flex;
@@ -430,9 +446,15 @@ body {
   
   .delivery-options, .return-warranty, .qr-code, .store-info {
     margin-bottom: 30px;
+    font-weight: lighter;
   }
+  .delivery-options h3{
+    font-weight: lighter;
+    font-size: 10px;
+  }
+
   .chat-now {
-      color: #007bff; /* Change to your desired color */
+      color: #b0c7eb; /* Change to your desired color */
       text-decoration: none;
       font-weight: bold;
   }
@@ -466,158 +488,150 @@ body {
     margin-left: auto;
     font-weight: bold;
   }
-  
   .qr-and-app-container {
     display: flex;
     align-items: center;
-    gap: 10px; /* Add space between the QR code and the app container */
-  }
-  
-  .qr-code {
+    gap: 10px; /* Space between the QR code and the app container */
+}
+
+.qr-code {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center the QR code and text */
-  }
-  
-  .qr-img {
+    align-items: center;
+    text-align: center; /* Center align text */
+}
+
+.qr-img {
     width: 110px;
-    height: 100px;
+    height: 110px; /* Make it a square for a more accurate QR code representation */
     display: block;
     margin-bottom: 5px;
-  }
-  
-  .qr-code p {
-    font-size: 13px;
+}
+
+.qr-code p {
+    font-size: 12px; /* Slightly smaller text */
     color: #333;
     margin: 0;
-  }
-  
-  .qr-code .icon {
-    width: 19px;
-    height: 12px;
+}
+
+.qr-code .icon {
+    width: 16px; /* Smaller size */
+    height: 16px; /* Make the icon square for consistency */
     margin-right: 5px;
-  }
-  
-  .download-app-container {
+    vertical-align: middle;
+}
+.download-app-container {
     display: flex;
     flex-direction: column;
+    align-items: flex-start; /* Align content to the left */
     background-color: #fff;
     padding: 10px;
-    border-radius: 9px;
+    border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: relative;
-    width: 120px;
-    height: 100px;
+    width: 130px;
+    height: auto;
     margin-bottom: 40px;
-  }
-  
-  .download-app-container::before {
-    content: "";
-    position: absolute;
-    left: -9px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 0;
-    height: 0;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-  }
-  
-  .app-icon img {
-    width: 80px;
+}
+
+.app-icon img {
+    
+    width: 80px; /* Adjust size as needed */
     height: 50px;
-    margin-bottom: 5px;
-  }
-  
-  .app-description p {
+    margin-bottom: 5px; /* Space between the logo and text */
+}
+
+.app-description p {
     color: #969393;
     font-size: 12px;
     margin: 0;
-    text-align: left;
+    text-align: left; /* Ensure the text is aligned to the left */
     line-height: 1.2;
-  }
+}
+
+
   
   
+
   .store-info {
-    text-align: left;
-    background-color: white;
-    padding: 20px;
-    border: 1px solid #e0e0e0;
-    width: 275px; /* Matching the width from the image */
-    margin: 0 auto;
-  }
-  
-  .sold-by {
+    width: 300px; /* Adjust according to your layout */
+    background-color: #f9f9f9;
+    padding: 9px;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+}
+
+.sold-by {
     font-size: 14px;
     margin-bottom: 10px;
-  }
-  .chat-now {
-    color: #43b3f1;
-    font-size: 12px;
-    font-weight: lighter;
-    text-decoration: none;
-    margin-left: auto; /* Pushes the element to the right */
-  }
-  
-  /* Apply flexbox to the parent container */
-  .parent-container {
     display: flex;
-    align-items: center; /* If you need vertical centering */
-  }
-  
-  
-  .chat-now:hover {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-now {
+    color: #7b00ff;
+    font-size: 12px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.chat-now:hover {
     text-decoration: underline;
-  }
-  
-  .divider {
-    border-bottom: 2px solid #e0e0e0;
+}
+
+.divider {
+    border-bottom: 1px solid #e0e0e0;
     margin: 10px 0;
-  }
-  
-  .seller-stats {
+}
+
+.seller-stats {
     display: flex;
     justify-content: space-between;
     margin-top: 10px;
-  }
-  
-  .stat {
-    text-align: left;
-  }
-  
-  .stat-title {
+ 
+}
+
+.stat {
+    text-align: center;
+    flex: 1;
+}
+
+.stat-title {
     font-size: 10px;
     color: #999;
     margin-bottom: 5px;
-  }
-  .divde{
-    border-right: 1px solid #e0e0e0;
-   margin-right: 20px;
-  
-  }
-  .stat-value {
-    text-align: left;
-    margin-top: 17px;
+}
+
+.stat-value {
+    margin-top: 10px;
     font-size: 23px;
     font-weight: lighter;
     color: #333;
-  }
-  
-  .no-data {
+   
+}
+
+.no-data {
     color: #ccc;
     font-size: 10px;
-  }
-  
-  .go-to-store {
+}
+
+.divde {
+    border-right: 1px solid #e0e0e0;
+    margin: 0 10px;
+}
+
+.go-to-store {
     display: block;
     font-weight: bold;
-    color: #43b3f1;
+    color: #7b00ff;
     text-align: center;
-    padding: 10px;
-    text-decoration: none;  
+    padding: 10px 0;
+    text-decoration: none;
     margin-top: 10px;
     font-size: 14px;
-  }
-  
-  
-  
+}
+
+.go-to-store:hover {
+    text-decoration: underline;
+}
