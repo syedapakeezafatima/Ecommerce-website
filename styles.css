@@ -164,10 +164,10 @@ header {
 
 /* Style for left and right navigation arrows */
 .flickity-prev-next-button {
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  background-color: rgba(222, 215, 215, 0.5); /* Semi-transparent background */
   border: none;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   position: absolute;
   top: 50%;
   transform: translateY(-50%); /* Center vertically */
@@ -213,7 +213,7 @@ header {
 
 .categories-section h2 {
   text-align: left;
-  margin-left: 67px;
+  margin-left: 8px;
   font-size: 23px;
   margin-bottom: 10px;
   font-weight: lighter;
@@ -255,17 +255,10 @@ header {
 
 /* Just for You section */
 .just-for-you {
-  
   padding: 10px 0; /* Reduced padding for consistency */
 }
 
-.just-for-you h2 {
-  text-align: left;
-  font-size: 24px; /* Keep the font size the same */
-  margin-bottom: 10px; /* Space below the heading */
-  font-weight: lighter; /* Keep the font weight the same */
-  color: #333; /* Text color */
-}
+
 
 .just-for-you-grid {
   display: grid;
@@ -462,7 +455,7 @@ header {
 
 
 .footer {
-  padding: 30px;
+  padding: 1px;
   color: #564a74;
   background-color: #f4f4f4; /* Adjust as needed */
 }
