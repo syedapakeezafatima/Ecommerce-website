@@ -224,6 +224,25 @@ document.querySelector('.decrement').addEventListener('click', function () {
     }
 });
 
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const logo = document.querySelector('.logo-img');
+
+    // Add click event to navigate to the previous page
+    logo.addEventListener('click', () => {
+        if (document.referrer) {
+            // Navigate to the previous page if available
+            window.history.back();
+        } else {
+            // If no previous page, redirect to a fallback page (like homepage)
+            window.location.href = 'index.html';
+        }
+    });
+});
+
+
     </script>
 </body>
 </html>

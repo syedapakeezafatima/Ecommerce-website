@@ -66,92 +66,28 @@
         </div>
     </div>
     
-
-        <div class="categories-section">
-            <h2>Categories</h2>
-            <div class="categories-grid">
-                <div class="category-item">
-                    <img src="bag.webp" alt="Messenger Bags">
-                    <p>Messenger Bags</p>
-                </div>
-                <div class="category-item">
-                    <img src="sunglasses.jfif" alt="Sunglasses">
-                    <p>Sunglasses</p>
-                </div>
-                <div class="category-item">
-                    <img src="mobile.webp" alt="Mobiles">
-                    <p>Mobiles</p>
-                </div>
-                <div class="category-item">
-                    <img src="tote.webp" alt="Tote Bags">
-                    <p>Tote Bags</p>
-                </div>
-                <div class="category-item">
-                    <img src="cat.webp" alt="Dog & Cat Beds">
-                    <p>Dog & Cat Beds</p>
-                </div>
-                <div class="category-item">
-                    <img src="tablet.webp" alt="Tablets">
-                    <p>Tablets</p>
-                </div>
-                <div class="category-item">
-                    <img src="wire.webp" alt="Starter Kits">
-                    <p>Starter Kits</p>
-                </div>
-                <div class="category-item">
-                    <img src="building.webp" alt="Blocks & Building Toys">
-                    <p>Blocks & Building Toys</p>
-                </div>
-                <div class="category-item">
-                    <img src="flag.webp" alt="Post-it Notes, Flags & Tabs">
-                    <p>Post-it Notes, Flags & Tabs</p>
-                </div>
-                <div class="category-item">
-                    <img src="knife.webp" alt="Knife Sharpeners & Blocks">
-                    <p>Knife Sharpeners & Blocks</p>
-                </div>
-                <div class="category-item">
-                    <img src="micro.webp" alt="Microphones">
-                    <p>Microphones</p>
-                </div>
-                <div class="category-item">
-                    <img src="shampoo.webp" alt="Shampoo & Conditioners">
-                    <p>Shampoo & Conditioners</p>
-                </div>
-                <div class="category-item">
-                    <img src="paint.webp" alt="Paints">
-                    <p>Paints</p>
-                </div>
-                <div class="category-item">
-                    <img src="zakat.webp" alt="Zakat">
-                    <p>Zakat</p>
-                </div>
-                <div class="category-item">
-                    <img src="hanger.webp" alt="Shower Caddies & Hangers">
-                    <p>Shower Caddies & Hangers</p>
-                </div>
-                <div class="category-item">
-                    <img src="set.webp" alt="Dining Sets">
-                    <p>Dining Sets</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="just-for-you"> </div>
-        <h2 style="font-weight: lighter; color: #575757;">Just For You</h2>
-
-            <div class="just-for-you-grid">
-   
-        </div>
-
-        <div class="container">
-            <!-- Products will be appended here -->
-        </div>
-        
-        <div class="load-more-container">
-            <button class="load-more-button">LOAD MORE</button>
-        </div>
-        
+    <div class="categories-section" id="categories-section">
+        <h2>Categories</h2>
+        <div class="categories-grid"></div> <!-- Grid populated by JavaScript -->
+    </div>
+    
+    
+    <!-- "Just For You" Section -->
+    <div class="just-for-you">
+        <h2 style="font-weight: lighter; font-size: 22px; color: #4b4b4b;">Just For You</h2>
+        <div class="just-for-you-grid"></div> <!-- Grid for personalized products -->
+    </div>
+    
+    <!-- Product Container -->
+    <div class="container">
+        <!-- Products will be appended here by JavaScript -->
+    </div>
+    
+    <!-- Load More Button -->
+    <div class="load-more-container">
+        <button class="load-more-button">LOAD MORE</button>
+    </div>
+    
 
         <div class="footer">
             <div class="footer-container">
@@ -230,16 +166,27 @@
 
         
    
-
-
 <div class="sidebar">
     <ul class="icon-list">
-        <li><img src="arrow.png" alt="Arrow"></li>
-        <li><img src="fire.png" alt="Fire"></li>
-        <li><img src="table.png" alt="Table"></li>
-        <li><img src="user.png" alt="User"></li>
+        <li>
+            <img src="arrow.png" alt="Arrow">
+            <span class="tooltip">Arrow</span>
+        </li>
+        <li>
+            <img src="fire.png" alt="Fire">
+            <span class="tooltip">Flash Sale</span>
+        </li>
+        <li>
+            <img src="table.png" alt="Table">
+            <span class="tooltip">Categories</span>
+        </li>
+        <li>
+            <img src="user.png" alt="User">
+            <span class="tooltip">Just for You</span>
+        </li>
     </ul>
 </div>
+
 
 </body>
 </html>
