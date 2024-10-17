@@ -22,7 +22,6 @@ header {
   text-align: right;
   word-spacing: 0px;
  display: block;
-
 }
 
 
@@ -143,24 +142,32 @@ header {
 }
 /* Carousel container */
 .carousel-container {
-
   display: flex;
   justify-content: center; /* Center the carousel */
   align-items: center;
   position: relative; /* For positioning arrows */
   width: 100%;
+  height: 379px; /* Set your desired height here */
+  overflow: hidden; /* Prevent overflow of content */
 }
 
 /* Main Carousel */
 .main-carousel {
   width: 100%;
   position: relative; /* Ensure the carousel is positioned relative to the container */
+  margin: 0; /* Remove any default margin */
 }
 
+/* Carousel Cells */
 .carousel-cell img {
-  width: 100%;
-  object-fit: cover;
+  width: 100%; /* Set the width of images */
+  height: 99%; /* Ensure the image takes the full height */
+  object-fit: cover; /* Maintain aspect ratio and cover the area */
+  margin: auto; /* Center the image within the carousel cell */
 }
+
+
+
 
 /* Style for left and right navigation arrows */
 .flickity-prev-next-button {
@@ -294,16 +301,17 @@ header {
 }
 
 .just-for-you-item p {
+  font-weight: 400px;
   color: black; /* Change text color to black */
   margin: 2px 0; /* Reduced margin for smaller size */
   text-align: left; /* Align text to the left */
-  font-size: 12px; /* Font size for product name */
+  font-size: 14px; /* Font size for product name */
 }
 
 .just-for-you-item .price {
   color: red; /* Color for price */
   font-weight: lighter; /* Bold text for price */
-  font-size: 15px; /* Font size for price */
+  font-size: 16px; /* Font size for price */
   margin: 4px 0; /* Space below the price */
 }
 
@@ -455,6 +463,7 @@ header {
 
 
 .footer {
+  margin-top: 29px;
   padding: 1px;
   color: #564a74;
   background-color: #f4f4f4; /* Adjust as needed */
