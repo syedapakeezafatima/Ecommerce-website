@@ -23,45 +23,61 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to display products in the grid
     const displayProducts = () => {
-        const productsToShow = allProducts.slice(
-            totalFetchedProducts, 
-            totalFetchedProducts + productsPerPage
-        );
+        // Get the next set of products to display
+        const productsToShow = allProducts.slice(totalFetchedProducts, totalFetchedProducts + productsPerPage);
 
-        // Check if there are more products to show
-        if (productsToShow.length === 0) {
-            console.log('No more products to load');
-            loadMoreButton.style.display = 'none'; // Hide the button
-            return;
-        }
-
-        // Loop through the products and display them
+        // Append the products to the grid
         productsToShow.forEach(product => {
+            const starsHTML = getStarsHTML(product.rating.rate); // Generate stars based on rating
+
             const productHTML = `
                 <a href="product.html?id=${product.id}" class="just-for-you-item" style="text-decoration: none; color: inherit;">
                     <img src="${product.image}" alt="${product.title}">
                     <p>${product.title.substring(0, 30)}...</p>
                     <span class="price">Rs. ${product.price}</span>
                     <span class="discount">-${Math.floor(Math.random() * 30) + 50}%</span>
-                    <span class="rating">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        (${product.rating.count})
-                    </span>
+                    <div class="rating">
+                        ${starsHTML} 
+                        <span style="color: purple;">${product.rating.count} Ratings</span>
+                    </div>
                 </a>
             `;
             productGrid.innerHTML += productHTML;
         });
 
-        // Update the counter for displayed products
+        // Update the total number of displayed products
         totalFetchedProducts += productsPerPage;
 
-        // Hide the button if all products are loaded
+        // Hide the button if all products are displayed
         if (totalFetchedProducts >= allProducts.length) {
             loadMoreButton.style.display = 'none'; // Hide button
         }
+    };
+
+    // Function to generate star HTML based on rating value
+    const getStarsHTML = (rating) => {
+        const fullStars = Math.floor(rating); // Full stars
+        const halfStar = rating % 1 >= 0.5 ? 1 : 0; // Half star if rating has a decimal >= 0.5
+        const emptyStars = 5 - fullStars - halfStar; // Remaining empty stars
+
+        let starsHTML = '';
+
+        // Generate full star icons
+        for (let i = 0; i < fullStars; i++) {
+            starsHTML += '<i class="fa fa-star" style="color: yellow;"></i>';
+        }
+
+        // Generate half star icon (if applicable)
+        if (halfStar) {
+            starsHTML += '<i class="fa fa-star-half-alt" style="color: yellow;"></i>';
+        }
+
+        // Generate empty star icons
+        for (let i = 0; i < emptyStars; i++) {
+            starsHTML += '<i class="fa fa-regular fa-star" style="color: yellow;"></i>';
+        }
+
+        return starsHTML;
     };
 
     // Event listener for the "Load More" button
@@ -73,6 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Fetch products when the page loads
     fetchAllProducts();
 });
+
 
 
 
