@@ -554,49 +554,64 @@ body {
 
 
   
-  
+.store-info {
+  width: 300px; /* Adjust according to your layout */
+  background-color: #f9f9f9;
+  padding: 7px;
+  border-radius: 8px;
 
-  .store-info {
-    width: 300px; /* Adjust according to your layout */
-    background-color: #f9f9f9;
-    padding: 9px;
-    border-radius: 8px;
-    font-family: Arial, sans-serif;
 }
 
 .sold-by {
-    font-size: 14px;
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  font-size: 13px;
+  
+  display: flex; /* Use flexbox for alignment */
+  justify-content: space-between; /* Space between items */
+  align-items: center; /* Center vertically */
 }
 
 .chat-now {
-    color: #7b00ff;
-    font-size: 12px;
-    text-decoration: none;
-    font-weight: bold;
+  color: #7b00ff; /* Chat link color */
+  font-size: 13px; /* Chat link font size */
+  text-decoration: none; /* No underline */
+
 }
 
 .chat-now:hover {
-    text-decoration: underline;
+  text-decoration: underline; /* Underline on hover */
+}
+
+.chat-icon {
+  width: 16px; /* Icon size */
+  height: 16px; /* Icon size */
+  vertical-align: middle; /* Align with text */
+}
+
+.vendor-name {
+  font-weight: lighter;
+  font-size: 14px; /* Vendor name font size */
+  margin: 0; /* Remove margin */
+  display: block; /* Ensures it appears on a new line */
+}
+
+.chat-now:hover {
+  text-decoration: underline;
 }
 
 .divider {
     border-bottom: 1px solid #e0e0e0;
-    margin: 10px 0;
+    margin: 3px 0;
 }
 
 .seller-stats {
     display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
+    justify-content: left;
+    margin-top: 8px;
  
 }
 
 .stat {
-    text-align: center;
+    text-align: left;
     flex: 1;
 }
 
