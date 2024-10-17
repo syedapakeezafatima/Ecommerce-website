@@ -189,7 +189,7 @@ body {
   .product-image {
     max-width: 100%; 
     height: auto; 
-    margin-top: 65px;
+    margin-top: 15px;
      
   }
   
@@ -531,19 +531,20 @@ body {
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: relative;
-    width: 130px;
-    height: auto;
-    margin-bottom: 40px;
+    width: 140px;
+    height: 90px;
+    margin-bottom: 50px;
 }
 
 .app-icon img {
-    
-    width: 80px; /* Adjust size as needed */
-    height: 50px;
+  text-align: left;
+    width: 35px; /* Adjust size as needed */
+    height: 38px;
     margin-bottom: 5px; /* Space between the logo and text */
 }
 
 .app-description p {
+ 
     color: #969393;
     font-size: 12px;
     margin: 0;
