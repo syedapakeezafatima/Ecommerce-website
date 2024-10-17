@@ -5,42 +5,44 @@ document.addEventListener('DOMContentLoaded', () => {
     const loadMoreButton = document.querySelector('.load-more-button');
     let allProducts = []; // Store all products fetched at once
 
-    //  to fetch all products from the API
+    // Fetch all products from the API
     const fetchAllProducts = async () => {
         try {
             const res = await fetch('https://fakestoreapi.com/products');
-            allProducts = await res.json(); // Fetch all products once
+            if (!res.ok) throw new Error('Failed to fetch products');
+            allProducts = await res.json(); // Store all fetched products
 
-            console.log('Fetched all products:', allProducts);
+            console.log('Fetched all products:', allProducts); // Debugging
 
-            // Initially display the first set of products
+            // Display the first set of products
             displayProducts();
         } catch (error) {
-            console.error("Error fetching products:", error);
+            console.error('Error fetching products:', error);
         }
     };
 
     // Function to display products in the grid
-    // yehn all product is array ha jahan sary products han
     const displayProducts = () => {
-        const productsToShow = allProducts.slice(totalFetchedProducts, totalFetchedProducts + productsPerPage);
+        const productsToShow = allProducts.slice(
+            totalFetchedProducts, 
+            totalFetchedProducts + productsPerPage
+        );
 
-        // If no more products, hide the button
+        // Check if there are more products to show
         if (productsToShow.length === 0) {
             console.log('No more products to load');
-            loadMoreButton.style.display = 'none';
+            loadMoreButton.style.display = 'none'; // Hide the button
             return;
         }
 
-        // Loop through the fetched products and display them
+        // Loop through the products and display them
         productsToShow.forEach(product => {
             const productHTML = `
-                <div class="product">
+                <a href="product.html?id=${product.id}" class="just-for-you-item" style="text-decoration: none; color: inherit;">
                     <img src="${product.image}" alt="${product.title}">
-                    <a href="product.html?id=${product.id}">
-                        <h3>${product.title.substring(0, 30)}...</h3>
-                    </a>
-                    <p class="price">Rs. ${product.price} <span class="discount">-${Math.floor(Math.random() * 30) + 50}%</span></p>
+                    <p>${product.title.substring(0, 30)}...</p>
+                    <span class="price">Rs. ${product.price}</span>
+                    <span class="discount">-${Math.floor(Math.random() * 30) + 50}%</span>
                     <span class="rating">
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
@@ -48,109 +50,29 @@ document.addEventListener('DOMContentLoaded', () => {
                         <i class="fa-solid fa-star"></i>
                         (${product.rating.count})
                     </span>
-                </div>
+                </a>
             `;
             productGrid.innerHTML += productHTML;
         });
 
-        // Update the total number of displayed products
+        // Update the counter for displayed products
         totalFetchedProducts += productsPerPage;
+
+        // Hide the button if all products are loaded
+        if (totalFetchedProducts >= allProducts.length) {
+            loadMoreButton.style.display = 'none'; // Hide button
+        }
     };
 
-    // Load more button click event
+    // Event listener for the "Load More" button
     loadMoreButton.addEventListener('click', () => {
-        console.log('Load More button clicked');
+        console.log('Load More button clicked'); // Debugging
         displayProducts(); // Display the next set of products
     });
 
-    // Fetch and display the first set of products
+    // Fetch products when the page loads
     fetchAllProducts();
 });
-
-
-
-
-
-// Get the product ID from the URL
-const params = new URLSearchParams(window.location.search);
-const productId = params.get('id');
-
-// Example product data (replace with your own API call or database query)
-const products = [
-    { id: 1, name: "Product 1", price: 19.99, description: "Description for Product 1" },
-    { id: 2, name: "Product 2", price: 29.99, description: "Description for Product 2" },
-    // Add more products here
-];
-
-// Find the product by ID
-const product = products.find(p => p.id == productId);
-
-// Update the HTML with product details
-if (product) {
-    document.querySelector('.product-name').textContent = product.name;
-    document.querySelector('.product-price').textContent = `$${product.price}`;
-    document.querySelector('.product-description').textContent = product.description;
-}
-
-// Variables for load more functionality
-let totalFetchedProducts = 0; // Track total displayed products
-const productsPerPage = 12; // Number of products to load at once
-let allProducts = []; // Store all fetched products
-const loadMoreButton = document.querySelector('.load-more-button'); // Load more button
-
-// Function to fetch data from API and initialize product loading
-const fetchData = async () => {
-    try {
-        const res = await fetch("https://fakestoreapi.com/products");
-        const data = await res.json();
-
-        allProducts = data; // Store all fetched products
-
-        displayProducts(); // Display the first 12 products
-    } catch (error) {
-        console.error("Error fetching data:", error);
-    }
-};
-
-// Function to display the next set of products
-const displayProducts = () => {
-    const productGrid = document.querySelector(".just-for-you-grid");
-
-    // Get the next set of products to display
-    const productsToShow = allProducts.slice(totalFetchedProducts, totalFetchedProducts + productsPerPage);
-
-    // Append the products to the grid
-    productsToShow.forEach(product => {
-        const productHTML = `
-            <a href="product.html?id=${product.id}" class="just-for-you-item" style="text-decoration: none; color: inherit;">
-                <img src="${product.image}" alt="${product.title}">
-                <p>${product.title.substring(0, 30)}...</p>
-                <span class="price">Rs.${product.price}</span>
-                <span class="discount">-${Math.floor(Math.random() * 30) + 50}%</span>
-                <span class="rating">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    (${product.rating.count})
-                </span>
-            </a>
-        `;
-        productGrid.innerHTML += productHTML;
-    });
-
-    // Update the total number of displayed products
-    totalFetchedProducts += productsPerPage;
-
-    // Hide the button if all products are displayed
-    if (totalFetchedProducts >= allProducts.length) {
-        loadMoreButton.style.display = 'none'; // Hide the button when all products are loaded
-    }
-};
-
-// Fetch data and display the first set of products when the page loads
-fetchData();
-
 
 
 
