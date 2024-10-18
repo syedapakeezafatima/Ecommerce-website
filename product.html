@@ -52,7 +52,7 @@
                 <h1 class="product-name">Women Classic Rectangle Retro Square Leopard Print Sunglasses</h1>
                 <div class="product-ratings">
                     <span class="stars">★★★★★</span>
-                    <p class="rating-details">615 Ratings</p>
+                    <p class="rating-details">615 Ratings</p> 
                     <span class="rating-icons">
                         <img src="share.png" alt="Share Icon" class="icon">
                         <img src="heart.png" alt="Heart Icon" class="icon">
@@ -164,11 +164,9 @@
     </div>
     
     <script>
-
-        // Get the product ID from the URL
+// Get the product ID from the URL
 const params = new URLSearchParams(window.location.search);
 const productId = params.get('id');
-
 
 // Function to fetch product details by ID from the API
 const fetchProductDetails = async () => {
@@ -177,34 +175,72 @@ const fetchProductDetails = async () => {
         const product = await res.json();
 
         if (product) {
+            // Update product name and price
             document.querySelector('.product-name').textContent = product.title;
             document.querySelector('.current-price').textContent = `Rs. ${product.price}`;
-            
 
             // Log the image URL for debugging
             console.log("Product Image URL:", product.image);
 
-            // Update the image source with a fallback in case of an error
+            // Update the product image with fallback support
             const productImage = document.querySelector('.product-image');
             productImage.src = product.image;
             productImage.alt = product.title;
 
-            // Use a fallback image if the original fails to load
             productImage.onerror = function () {
                 this.onerror = null;
-                this.src = 'fallback-image.png'; // Set the path to your fallback image
+                this.src = 'fallback-image.png'; // Path to fallback image
             };
+
+            // Update product rating and rating count
+            document.querySelector('.stars').textContent = '★'.repeat(Math.round(product.rating.rate));
+            document.querySelector('.rating-count').textContent = product.rating.count;
         } else {
-            // If product not found, show an error message or redirect
+            // Handle product not found
             document.querySelector('.product-name').textContent = "Product Not Found";
             document.querySelector('.current-price').textContent = "";
-            document.querySelector('.original-price').textContent = "";
-            document.querySelector('.discount').textContent = "";
         }
     } catch (error) {
         console.error("Error fetching product details:", error);
     }
 };
+
+// Fetch product details on page load
+fetchProductDetails();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
