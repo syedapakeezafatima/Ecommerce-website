@@ -413,7 +413,7 @@ header {
 }
 
 .rating {
-  color: rgb(183, 181, 181); /* Color for rating stars */
+  color: rgb(252, 37, 37); /* Color for rating stars */
   font-size: 9px; /* Font size for rating */
 }
 
@@ -456,17 +456,17 @@ header {
 }
 
 .icon-list li img:hover {
-  background-color: #f69947;
+  background-color: #f89e54;
 }
 
 /* Tooltip styles */
 .tooltip {
   position: absolute;
-  left: 50px; /* Position tooltip to the right */
+  left: 31px; /* Position tooltip to the right */
   top: 50%;
   transform: translateY(-50%);
   background-color: #ffffff;
-  color: #F85606; 
+  color: #f49a50; 
   padding: 5px 10px;
   border-radius: 4px;
   white-space: nowrap;

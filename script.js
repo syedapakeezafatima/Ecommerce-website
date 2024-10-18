@@ -38,7 +38,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     <span class="discount">-${Math.floor(Math.random() * 30) + 50}%</span>
                     <div class="rating">
                         ${starsHTML} 
-                        <span style="color: purple;">${product.rating.count} Ratings</span>
+                        <span style="color: black;">(${product.rating.count})</span>
+
                     </div>
                 </a>
             `;
