@@ -169,3 +169,75 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Fetch and display categories on page load
     fetchAndDisplayCategories();
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Get elements
+    const loginLink = document.getElementById('loginLink');
+    const modal = document.getElementById('loginModal');
+    const modalBackground = document.getElementById('modalBackground');
+    const closeModal = document.querySelector('.close');
+    const loginForm = document.getElementById('loginForm');
+
+    // Open modal on login link click
+    loginLink.addEventListener('click', (e) => {
+        e.preventDefault(); // Prevent default link behavior
+        modal.classList.remove('hidden');
+        modalBackground.classList.remove('hidden');
+    });
+
+    // Close modal when clicking close button or background
+    closeModal.addEventListener('click', closeModalFunction);
+    modalBackground.addEventListener('click', closeModalFunction);
+
+    function closeModalFunction() {
+        modal.classList.add('hidden');
+        modalBackground.classList.add('hidden');
+    }
+
+    // Handle login form submission
+    loginForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        try {
+            const res = await fetch('https://fakestoreapi.com/auth/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ username, password }),
+            });
+
+            const json = await res.json();
+
+            if (json.token) {
+                alert('Login successful!');
+                console.log('Token:', json.token);
+                closeModalFunction(); // Close modal after successful login
+            } else {
+                alert('Invalid credentials. Please try again.');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    });
+});

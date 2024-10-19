@@ -16,7 +16,7 @@
                 <a href="#">SAVE MORE ON APP</a>
                 <a href="#">Sell ON DARAZ</a>
                 <a href="#">HELP & SUPPORT</a>
-                <a href="#">LOGIN</a>
+                <a href="#" id="loginLink" class="login-link">LOGIN</a>
                 <a href="#">SIGN UP</a>
                 <a href="#">زبان تبدیل کریں</a>
 
@@ -177,6 +177,38 @@
         </li>
     </ul>
 </div>
+
+
+ 
+    <!-- Modal Background -->
+    <div id="modalBackground" class="modal-background hidden"></div>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal hidden">
+        <span class="close">&times;</span>
+        <h2>Login</h2>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="#">Sign Up</a></p>
+    </div>
+     
+ </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 </body>
