@@ -97,17 +97,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
 document.addEventListener('DOMContentLoaded', async () => {
     const categoriesGrid = document.querySelector('.categories-grid');
+    const productsGrid = document.querySelector('.just-for-you-grid');
 
-    // Manually define extra categories with images
     const extraCategories = [
         { name: 'Bags', image: 'bag.webp' },
         { name: 'Watches', image: 'watch.webp' },
         { name: 'Mobiles', image: 'mobile.webp' },
         { name: 'Toys', image: 'building.webp' },
-        { name: 'cady', image: 'cady.webp' },
+        { name: 'Cady', image: 'cady.webp' },
         { name: 'Bulb', image: 'bulb.webp' },
         { name: 'Sunglasses', image: 'sunglasses.jfif' },
         { name: 'Cat', image: 'cat.webp' },
@@ -116,22 +115,17 @@ document.addEventListener('DOMContentLoaded', async () => {
         { name: 'Dining Set', image: 'set.webp' },
         { name: 'Wire', image: 'wire.webp' }
     ];
-    
 
-    // Function to fetch and display all categories with images
     const fetchAndDisplayCategories = async () => {
         try {
-            // Fetch categories from the API
             const categoriesRes = await fetch('https://fakestoreapi.com/products/categories');
             if (!categoriesRes.ok) throw new Error('Failed to fetch categories');
             const apiCategories = await categoriesRes.json();
 
-            // Fetch all products from the API
             const productsRes = await fetch('https://fakestoreapi.com/products');
             if (!productsRes.ok) throw new Error('Failed to fetch products');
             const products = await productsRes.json();
 
-            // Prepare API categories with their product images
             const formattedApiCategories = apiCategories.map(category => {
                 const productInCategory = products.find(prod => prod.category === category);
                 return {
@@ -140,10 +134,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 };
             });
 
-            // Combine API categories with custom categories
             const allCategories = [...formattedApiCategories, ...extraCategories];
-
-            // Display all the categories on the page
             displayCategories(allCategories);
         } catch (error) {
             console.error('Error fetching data:', error);
@@ -151,24 +142,154 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     };
 
-    // Function to render the categories in the grid
     const displayCategories = (categories) => {
-        categoriesGrid.innerHTML = ''; // Clear the grid before rendering
+        categoriesGrid.innerHTML = '';
 
         categories.forEach(category => {
-            const categoryHTML = `
-                <div class="category-item">
-                    <img src="${category.image}" alt="${category.name}">
-                    <p>${category.name}</p>
+            const categoryElement = document.createElement('div');
+            categoryElement.classList.add('category-item');
+            categoryElement.innerHTML = `
+                <img src="${category.image}" alt="${category.name}">
+                <p>${category.name}</p>
+            `;
+
+            // Attach click event to fetch products by category
+            categoryElement.addEventListener('click', () => {
+                fetchProductsByCategory(category.name.toLowerCase());
+            });
+
+            categoriesGrid.appendChild(categoryElement);
+        });
+    };
+
+    const fetchProductsByCategory = async (category) => {
+        try {
+            const response = await fetch(`https://fakestoreapi.com/products/category/${category}`);
+            if (!response.ok) throw new Error('Failed to fetch products');
+            const products = await response.json();
+            displayProducts(products);
+        } catch (error) {
+            console.error('Error fetching products:', error);
+            productsGrid.innerHTML = '<p>Failed to load products. Please try again later.</p>';
+        }
+    };
+
+    const displayProducts = (products) => {
+        productsGrid.innerHTML = '';
+
+        products.forEach(product => {
+            const productHTML = `
+                <div class="just-for-you-item">
+                    <img src="${product.image}" alt="${product.title}">
+                    <p>${product.title}</p>
+                    <p class="price">$${product.price}</p>
+                    <div class="rating" style="color: yellow; font-size: 16px">${'★'.repeat(Math.round(product.rating.rate))}</div>
                 </div>
             `;
-            categoriesGrid.innerHTML += categoryHTML;
+            productsGrid.innerHTML += productHTML;
         });
     };
 
     // Fetch and display categories on page load
     fetchAndDisplayCategories();
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -241,3 +362,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+
+
+
+
+
+
+
+
+
+
+
