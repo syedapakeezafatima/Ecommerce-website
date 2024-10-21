@@ -1,3 +1,65 @@
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Get elements
+    const loginLink = document.getElementById('loginLink');
+    const modal = document.getElementById('loginModal');
+    const modalBackground = document.getElementById('modalBackground');
+    const closeModal = document.querySelector('.close');
+    const loginForm = document.getElementById('loginForm');
+
+    // Open modal on login link click
+    loginLink.addEventListener('click', (e) => {
+        e.preventDefault(); // Prevent default link behavior
+        modal.classList.remove('hidden');
+        modalBackground.classList.remove('hidden');
+    });
+
+    // Close modal when clicking close button or background
+    closeModal.addEventListener('click', closeModalFunction);
+    modalBackground.addEventListener('click', closeModalFunction);
+
+    function closeModalFunction() {
+        modal.classList.add('hidden');
+        modalBackground.classList.add('hidden');
+    }
+
+    // Handle login form submission
+    loginForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        try {
+            const res = await fetch('https://fakestoreapi.com/auth/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ username, password }),
+            });
+
+            const json = await res.json();
+
+            if (json.token) {
+                alert('Login successful!');
+                console.log('Token:', json.token);
+                closeModalFunction(); // Close modal after successful login
+            } else {
+                alert('Invalid credentials. Please try again.');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    });
+});
+
+
+
+
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
     let totalFetchedProducts = 0; // Track total displayed products
     const productsPerPage = 12; // Number of products to load at once
@@ -97,9 +159,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 document.addEventListener('DOMContentLoaded', async () => {
     const categoriesGrid = document.querySelector('.categories-grid');
-    const productsGrid = document.querySelector('.just-for-you-grid');
 
     const extraCategories = [
         { name: 'Bags', image: 'bag.webp' },
@@ -153,224 +248,15 @@ document.addEventListener('DOMContentLoaded', async () => {
                 <p>${category.name}</p>
             `;
 
-            // Attach click event to fetch products by category
             categoryElement.addEventListener('click', () => {
-                fetchProductsByCategory(category.name.toLowerCase());
+                localStorage.setItem('selectedCategory', category.name.toLowerCase());
+                window.location.href = 'categories.html'; // Redirect to the new page
             });
 
             categoriesGrid.appendChild(categoryElement);
         });
     };
 
-    const fetchProductsByCategory = async (category) => {
-        try {
-            const response = await fetch(`https://fakestoreapi.com/products/category/${category}`);
-            if (!response.ok) throw new Error('Failed to fetch products');
-            const products = await response.json();
-            displayProducts(products);
-        } catch (error) {
-            console.error('Error fetching products:', error);
-            productsGrid.innerHTML = '<p>Failed to load products. Please try again later.</p>';
-        }
-    };
-
-    const displayProducts = (products) => {
-        productsGrid.innerHTML = '';
-
-        products.forEach(product => {
-            const productHTML = `
-                <div class="just-for-you-item">
-                    <img src="${product.image}" alt="${product.title}">
-                    <p>${product.title}</p>
-                    <p class="price">$${product.price}</p>
-                    <div class="rating" style="color: yellow; font-size: 16px">${'★'.repeat(Math.round(product.rating.rate))}</div>
-                </div>
-            `;
-            productsGrid.innerHTML += productHTML;
-        });
-    };
-
     // Fetch and display categories on page load
     fetchAndDisplayCategories();
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    // Get elements
-    const loginLink = document.getElementById('loginLink');
-    const modal = document.getElementById('loginModal');
-    const modalBackground = document.getElementById('modalBackground');
-    const closeModal = document.querySelector('.close');
-    const loginForm = document.getElementById('loginForm');
-
-    // Open modal on login link click
-    loginLink.addEventListener('click', (e) => {
-        e.preventDefault(); // Prevent default link behavior
-        modal.classList.remove('hidden');
-        modalBackground.classList.remove('hidden');
-    });
-
-    // Close modal when clicking close button or background
-    closeModal.addEventListener('click', closeModalFunction);
-    modalBackground.addEventListener('click', closeModalFunction);
-
-    function closeModalFunction() {
-        modal.classList.add('hidden');
-        modalBackground.classList.add('hidden');
-    }
-
-    // Handle login form submission
-    loginForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const username = document.getElementById('username').value;
-        const password = document.getElementById('password').value;
-
-        try {
-            const res = await fetch('https://fakestoreapi.com/auth/login', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ username, password }),
-            });
-
-            const json = await res.json();
-
-            if (json.token) {
-                alert('Login successful!');
-                console.log('Token:', json.token);
-                closeModalFunction(); // Close modal after successful login
-            } else {
-                alert('Invalid credentials. Please try again.');
-            }
-        } catch (error) {
-            console.error('Error:', error);
-        }
-    });
-});
-
-
-
-
-
-
-
-
-
-
-
-

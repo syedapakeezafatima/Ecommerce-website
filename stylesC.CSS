@@ -1,0 +1,30 @@
+body {
+    font-family: Roboto-Regular, Helvetica Neue, Helvetica, Tahoma, Arial,
+      Sans-serif;
+    margin: 0;
+    background-color: #efeaea; /* Adjust as needed */
+  }
+
+  
+  .products-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.just-for-you-item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    width: 200px;
+}
+
+.just-for-you-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+.price {
+    font-weight: bold;
+    color: green;
+}
