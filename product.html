@@ -51,8 +51,8 @@
             <div class="product-info">
                 <h1 class="product-name">Women Classic Rectangle Retro Square Leopard Print Sunglasses</h1>
                 <div class="product-ratings">
-                    <span class="stars">★★★★★</span>
-                    <p class="rating-details">615 Ratings</p> 
+                    <span class="stars">★★★★★</span> <!-- Dynamically replaced with stars -->
+                    <p class="rating-details">615 Ratings</p> <!-- Dynamically replaced with rating count -->
                     <span class="rating-icons">
                         <img src="share.png" alt="Share Icon" class="icon">
                         <img src="heart.png" alt="Heart Icon" class="icon">
@@ -168,6 +168,8 @@
 
     
     <script>
+
+
 // Get the product ID from the URL
 const params = new URLSearchParams(window.location.search);
 const productId = params.get('id');
@@ -177,23 +179,31 @@ const fetchProductDetails = async () => {
         const res = await fetch(`https://fakestoreapi.com/products/${productId}`);
         const product = await res.json();
 
+        // Set the product details
         document.querySelector('.product-name').textContent = product.title;
-        document.querySelector('.current-price').textContent = `Rs. ${product.price}`;
         document.querySelector('.product-image').src = product.image;
+
+        // Generate star ratings
+        let starsHTML = '';
+        const roundedRating = Math.floor(product.rating.rate); // round down to nearest integer
+        for (let i = 0; i < roundedRating; i++) {
+            starsHTML += '★'; // filled star for each rating point
+        }
+        for (let i = roundedRating; i < 5; i++) {
+            starsHTML += '☆'; // empty star for remaining
+        }
+
+        // Set the stars and rating count
+        document.querySelector('.stars').innerHTML = starsHTML;
+        document.querySelector('.rating-details').textContent = `${product.rating.count} Ratings`;
+
     } catch (error) {
         console.error("Error fetching product details:", error);
     }
 };
 
-fetchProductDetails();
-
-
 // Fetch product details on page load
 fetchProductDetails();
-
-
-
-
 
 
 

@@ -454,12 +454,12 @@ header {
   transition: filter 0.3s ease;
   filter: brightness(0) invert(0); /* Black icons by default */
 }
+
 /* Hover Effect: Dark Orange */
 .icon-list li img:hover {
-  filter: brightness(0) invert(1) sepia(3) saturate(30) hue-rotate(10deg);
-  /* Darker, more vibrant orange adjustment */
+  filter: brightness(0) invert(1) sepia(1) saturate(20) hue-rotate(-12deg);
+  /* Darker, richer orange */
 }
-
 
 
 /* Tooltip Styles */
