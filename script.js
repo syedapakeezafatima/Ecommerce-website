@@ -178,10 +178,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
-
-
-
 document.addEventListener('DOMContentLoaded', async () => {
     const categoriesGrid = document.querySelector('.categories-grid');
     
