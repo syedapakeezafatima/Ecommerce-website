@@ -182,20 +182,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 document.addEventListener('DOMContentLoaded', async () => {
     const categoriesGrid = document.querySelector('.categories-grid');
-
+    
     const extraCategories = [
         { name: 'Bags', image: 'bag.webp' },
         { name: 'Watches', image: 'watch.webp' },
@@ -213,24 +202,28 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const fetchAndDisplayCategories = async () => {
         try {
+            // Fetch categories from the API
             const categoriesRes = await fetch('https://fakestoreapi.com/products/categories');
             if (!categoriesRes.ok) throw new Error('Failed to fetch categories');
             const apiCategories = await categoriesRes.json();
 
+            // Fetch products to associate with categories
             const productsRes = await fetch('https://fakestoreapi.com/products');
             if (!productsRes.ok) throw new Error('Failed to fetch products');
             const products = await productsRes.json();
 
+            // Format the categories with images
             const formattedApiCategories = apiCategories.map(category => {
                 const productInCategory = products.find(prod => prod.category === category);
                 return {
-                    name: category.charAt(0).toUpperCase() + category.slice(1),
+                    name: category, // Keeping the API category format exactly
                     image: productInCategory ? productInCategory.image : 'default.webp'
                 };
             });
 
+            // Combine API categories with manually added categories
             const allCategories = [...formattedApiCategories, ...extraCategories];
-            displayCategories(allCategories);
+            displayCategories(allCategories);  // Call to display all categories
         } catch (error) {
             console.error('Error fetching data:', error);
             categoriesGrid.innerHTML = '<p>Failed to load categories. Please try again later.</p>';
@@ -238,22 +231,27 @@ document.addEventListener('DOMContentLoaded', async () => {
     };
 
     const displayCategories = (categories) => {
-        categoriesGrid.innerHTML = '';
+        categoriesGrid.innerHTML = '';  // Clear any existing content
 
         categories.forEach(category => {
             const categoryElement = document.createElement('div');
             categoryElement.classList.add('category-item');
             categoryElement.innerHTML = `
                 <img src="${category.image}" alt="${category.name}">
-                <p>${category.name}</p>
+                <p>${category.name.charAt(0).toUpperCase() + category.name.slice(1)}</p>
             `;
 
+            // Attach click event to save the selected category and navigate to the category page
             categoryElement.addEventListener('click', () => {
-                localStorage.setItem('selectedCategory', category.name.toLowerCase());
-                window.location.href = 'categories.html'; // Redirect to the new page
+                // Store the selected category in localStorage without changing its format
+                console.log(`Saving selected category to localStorage: ${category.name}`);
+                localStorage.setItem('selectedCategory', category.name);
+                
+                // Navigate to the category.html page
+                window.location.href = 'categories.html';
             });
 
-            categoriesGrid.appendChild(categoryElement);
+            categoriesGrid.appendChild(categoryElement);  // Append category to the grid
         });
     };
 

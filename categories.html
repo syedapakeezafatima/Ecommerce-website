@@ -3,70 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Display the Categories</title>
-    <link rel="stylesheet" href="stylesC.CSS">
+    <title>Product Grid</title>
+    <link rel="stylesheet" href="stylesC.css"> <!-- Link to your CSS file -->
 </head>
 <body>
 
+<div class="products-section">
+    <div id="product-heading">
+        <h2>Available Products</h2> <!-- Optional heading for the section -->
+    </div>
+
     <div class="products-grid"></div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', async () => {
+    <!-- New div to hold the product details dynamically -->
+    <div id="product-details-section"></div>
+</div>
+
+<script>
+   document.addEventListener('DOMContentLoaded', async () => {
     const productsGrid = document.querySelector('.products-grid');
 
-    // Retrieve the selected category from localStorage
-    const selectedCategory = localStorage.getItem('selectedCategory');
-    console.log('Selected Category:', selectedCategory); // Debug log
-
-    if (selectedCategory) {
-        try {
-            const apiUrl = `https://fakestoreapi.com/products/category/${selectedCategory}`;
-            console.log(`API URL: ${apiUrl}`); // Debug log
-
-            const response = await fetch(apiUrl);
-            console.log('Response Status:', response.status); // Debug log
-
-            if (!response.ok) {
-                throw new Error(`Failed to fetch products. Status: ${response.status}`);
-            }
-
-            const products = await response.json();
-            console.log('Fetched Products:', products); // Debug log
-
-            if (products.length === 0) {
-                productsGrid.innerHTML = '<p>No products found in this category.</p>';
-            } else {
-                displayProducts(products);
-            }
-        } catch (error) {
-            console.error('Error fetching products:', error);
-            productsGrid.innerHTML = '<p>Failed to load products. Please try again later.</p>';
-        }
-    } else {
-        productsGrid.innerHTML = '<p>No category selected. Please go back and select a category.</p>';
-    }
-
+    // Function to display the products
     const displayProducts = (products) => {
-        productsGrid.innerHTML = ''; // Clear previous content
+        productsGrid.innerHTML = '';  // Clear any previous content
 
         products.forEach(product => {
+            const rating = product.rating && product.rating.rate ? Math.round(product.rating.rate) : 0;
             const productHTML = `
-                <div class="just-for-you-item">
+                <div class="product-item" data-id="${product.id}">
                     <img src="${product.image}" alt="${product.title}">
                     <p>${product.title}</p>
                     <p class="price">$${product.price}</p>
                     <div class="rating" style="color: yellow; font-size: 16px">
-                        ${'★'.repeat(Math.round(product.rating.rate))}
+                        ${'★'.repeat(rating)}
                     </div>
                 </div>
             `;
             productsGrid.innerHTML += productHTML;
         });
+
+        // Add click event listener for each product to load product details dynamically
+        document.querySelectorAll('.product-item').forEach(item => {
+            item.addEventListener('click', async () => {
+                const productId = item.getAttribute('data-id');
+                await loadProductDetails(productId);  // Load product details dynamically
+            });
+        });
     };
+
+    // Function to dynamically load product details
+    const loadProductDetails = async (productId) => {
+        const productDetailsSection = document.getElementById('product-details-section');
+        
+        // Clear the product grid and hide the heading
+        productsGrid.innerHTML = '';
+        document.getElementById('product-heading').style.display = 'none';  // Hide the heading
+
+        try {
+            const response = await fetch(`product.html`);
+            const html = await response.text();  // Fetch the HTML content of product.html
+            productDetailsSection.innerHTML = html;  // Inject the content into the page
+
+            // Fetch the actual product details
+            const productResponse = await fetch(`https://fakestoreapi.com/products/${productId}`);
+            const product = await productResponse.json();
+
+            // Ensure DOM is ready before updating product details
+            document.querySelector('.product-name').textContent = product.title;
+            document.querySelector('.current-price').textContent = `Rs. ${product.price}`;
+            document.querySelector('.product-image').src = product.image;
+        } catch (error) {
+            console.error('Error loading product details:', error);
+        }
+    };
+
+    // Fetch products based on the selected category
+    const selectedCategory = localStorage.getItem('selectedCategory');
+    if (selectedCategory) {
+        try {
+            const apiUrl = `https://fakestoreapi.com/products/category/${encodeURIComponent(selectedCategory)}`;
+            const response = await fetch(apiUrl);
+            if (!response.ok) throw new Error('Failed to fetch products');
+            const products = await response.json();
+            displayProducts(products);
+        } catch (error) {
+            console.error('Error fetching products:', error);
+        }
+    } else {
+        productsGrid.innerHTML = '<p>No category selected. Please go back and select a category.</p>';
+    }
 });
-
-
-    </script>
+</script>
 
 </body>
 </html>
