@@ -7,7 +7,77 @@
     <link rel="stylesheet" href="stylesC.css"> <!-- Link to your CSS file -->
 </head>
 <body>
+<style>
+    
+  /* Align the entire section centrally */
+.products-section {
+  text-align: center;
+  margin-bottom: 0;
+}
 
+/* Styling the heading of the section */
+.products-section h2 {
+  text-align: left;
+  margin-left: 10px;
+  font-size: 23px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  color: #4d4d4d;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 20px;
+}
+
+/* Individual product card styling */
+.product-item {
+  justify-content: center;
+  background-color: white;
+  padding: 12px;
+  box-shadow: 0 9px 9px rgba(2, 2, 2, 0.1);
+  text-align: center;
+  border: 0.1px solid rgb(238, 238, 238); /* Thin border around product card */
+  transition: transform 0.2s ease, box-shadow 0.7s ease;
+}
+
+/* Hover effect on product cards */
+.product-item:hover {
+  transform: scale(1.02); /* Small enlargement effect on hover */
+  box-shadow: 0 5px 5px rgba(2, 2, 2, 0.1); /* Slight shadow change on hover */
+}
+
+/* Styling for product images */
+.product-item img {
+  width: 100px; /* Adjust image size */
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+
+/* Product title styling */
+.product-item p {
+  font-size: 16px;
+  color: #333;
+  margin: 0;
+}
+
+/* Price styling for product */
+.product-item .price {
+  font-size: 18px;
+  color: #e74c3c;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+/* Rating star styling */
+.product-item .rating {
+  font-size: 16px;
+  color: #f39c12;
+}
+
+</style>
 <div class="products-section">
     <div id="product-heading">
         <h2>Available Products</h2> <!-- Optional heading for the section -->
