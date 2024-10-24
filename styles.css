@@ -454,14 +454,12 @@ header {
   transition: filter 0.3s ease;
   filter: brightness(0) invert(0); /* Black icons by default */
 }
-.icon-list li img:hover {
-  /* Instead of using filter for color, directly set the color to dark orange */
-  filter: none; /* Remove the filter to prevent yellowing */
-  background-color: #F57224; /* Adding background color as #F57224 */
-  /* If the icons are SVG or font icons, you can control the color directly */
-  color: #F57224; /* If applicable */
-}
 
+/* Hover Effect: Dark Orange */
+.icon-list li img:hover {
+  filter: brightness(0.5) invert(9) sepia(1) saturate(20) hue-rotate(-10deg);
+  /* Darker, richer orange */
+}
 
 
 /* Tooltip Styles */
