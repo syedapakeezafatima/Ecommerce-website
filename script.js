@@ -254,3 +254,35 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Fetch and display categories on page load
     fetchAndDisplayCategories();
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+window.addEventListener('scroll', function() {
+    const sidebar = document.querySelector('.sidebar');
+    if (window.scrollY > 0) { // User has started scrolling
+        sidebar.style.left = '10px'; // Set sidebar to visible position
+    } else {
+        sidebar.style.left = '-50px'; // Hide sidebar off screen when at the top
+    }
+});
